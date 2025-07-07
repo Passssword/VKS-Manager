@@ -1,0 +1,18 @@
+.sidebar {
+    background: var(--color5);
+    padding: 20px 15px;
+    color: var(--color2);
+    min-width: 160px;
+    max-width: 250px;
+}
+.gerb_image {width: 100%;}
+.profile_info {padding: 5px 0px 10px 0px; border-bottom: 2px solid var(--color1);}
+.menu_wrapper {padding: 5px 0px 10px 0px;border-bottom: 2px solid var(--color1);}
+.munu_caption {margin: 10px 0px 5px 0px;}
+.menu_btn {}
+
+.menuBtn {
+    text-decoration: none;
+    color: var(--color2);
+}
+.menuBtn:hover {color: var(--color4);}

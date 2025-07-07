@@ -1,0 +1,86 @@
+* {
+    margin: 0 auto;
+    box-sizing: border-box;
+    /* font: normal 16px "Play", sans-serif; */
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+}
+html, body {
+width: 100%;
+height: 100%;
+}
+:root {
+    --color1: #393D3F; /*  */
+    --color2: #FDFDFF; /*  */
+    --color3: #f5f5f5; /*  */
+    --color4: #62929E;
+    --color5: #546A7B;
+    --color6: #d3d4d8;
+    --color7: #b7b8bd;
+  }
+#app {
+    display: flex;
+    flex-direction: row;
+}
+
+.index_page {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    background: var(--color5);
+}
+
+.login-container {
+    display: flex;
+    width: 550px;
+    /* border: 1px solid var(--color2); */
+    /* background: #ebebeb; */
+    padding: 12px;
+  }
+.gerb_wrapper img {width: 180px;}
+.fields_wrapper {flex-grow: 1;}
+
+  /* Every row inside .login-container is defined with p tags */
+.login-container p {
+    padding: 12px;
+}
+
+.login-container input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    padding: 10px 15px;
+    outline: 0;
+    font-family: inherit;
+    font-size: 0.95em;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    background: #fff;
+    border-color: #bbb;
+    color: #555;
+}
+
+/* Text fields' focus effect */
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus {
+    border-color: #888;
+}
+
+.login-container input[type="submit"] {
+    background: #28d;
+    border-color: transparent;
+    color: #fff;
+    cursor: pointer;
+}
+
+.login-container input[type="submit"]:hover {
+    background: #17c;
+}
+
+/* Buttons' focus effect */
+.login-container input[type="submit"]:focus {
+    border-color: #05a;
+}

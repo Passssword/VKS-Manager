@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="sidebar.css">
+    <link rel="stylesheet" type="text/css" href="edit-user.css">
+    <title>VKS manager</title>
+  </head>
+
+  <body id="app">
+    
+    <div class="sidebar">
+      <div>
+
+        <img class="gerb_image" src="image/gerb.png"> <br />
+
+        <div class="profile_info">
+          Вы вошли как: <br />
+          <span id="sidebar_nickname"></span>
+        </div>
+
+        <div class="menu_wrapper">
+                
+          <span id="sidebar_menu"></span>
+          <span id="sidebar_adminka"></span>
+          
+        </div>
+
+      </div>
+    </div>
+
+    <div class="workspace">
+
+      <div class="editUser_header">
+        <h2>Редактирование данных пользователя:</h2>
+      </div>
+      <div class="editUser_name_block">
+      </div>
+
+      <table id="edit_User">
+        <tr>
+          <td>ID:</td>
+          <td id="EditUser_id">--</td>
+        </tr>
+        <tr><td>Логин:</td><td><input id="EditUser_Login" type="text" placeholder="Login"></td></tr>
+        <tr><td>Пароль:</td><td><input id="EditUser_Password" type="text" placeholder="Password"></td></tr>
+        <tr>
+          <td>Права доступа:</td>
+          <td> <select id="EditUser_Rolle" class="select">
+            <option value="User" selected>Пользователь системы</option>
+            <option value="Admin">Администратор системы</option>
+          </select></td>
+        </tr>
+        <tr>
+          <td>Имя:</td>
+          <td><input id="EditUser_Name" type="text" placeholder="Имя"></td>
+        </tr>
+        <tr>
+          <td>Отчество:</td>
+          <td><input id="EditUser_Patronymic" type="text" placeholder="Отчество"></td>
+        </tr>
+        <tr>
+          <td>Фамилия:</td>
+          <td><input id="EditUser_LastName" type="text" placeholder="Фамилия"></td>
+        </tr>
+      </table>
+      <div class="editUser_buttons_block">
+        <button id="editUser_button">Изменить данные пользователя.</button>
+      </div>
+    </div>
+
+    
+
+  </body>
+  <script type="text/javascript" src="/eel.js"></script>
+  <script src="./scripts/sidebar.js"></script>
+  <script src="./scripts/editUserPage.js"></script>
+</html>

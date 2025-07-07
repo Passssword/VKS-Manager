@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+        http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'"
+        />
+        <meta
+        http-equiv="X-Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'"
+        />
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="sidebar.css">
+        <link rel="stylesheet" type="text/css" href="tableListVKS.css">
+        <title>VKS manager</title>
+    </head>
+    <body id="app">
+
+        <div class="sidebar">
+            <div>
+      
+              <img class="gerb_image" src="image/gerb.png"> <br />
+      
+              <div class="profile_info">
+                Вы вошли как: <br />
+                <span id="sidebar_nickname"></span>
+              </div>
+      
+              <div class="menu_wrapper">
+                
+                <span id="sidebar_menu"></span>
+                <span id="sidebar_adminka"></span>
+                
+              </div>
+      
+            </div>
+          </div>
+
+          
+
+          <div class="workspace">
+
+            <!-- <div class="modal_wrapper">
+              <div class="modal_ivent_wrapper">
+                <div class="VKSList_event_wrapper">
+
+                  <div class="VKSList_event_caption">
+                    <p id="Modal_Caption_Date">Date / Time</p>
+                    <p id="Modal_Caption_Organization">Organization</p>
+                    <p id="Modal_Caption_Type">Вх. / Исх.</p>
+                  </div>
+
+                  <div class="event_information">
+                    <div class="info_captions">
+                      <div>Судья:</div>
+                      <div>№ Зала:</div>
+                      <div>Дата события:</div>
+                      <div>Зарегистрировал: </div>
+                    </div>
+                    <div class="info_content">
+                      <div id="Modal_Info_Judge">Ф.И.О. Судьи</div>
+                      <div id="Modal_Info_Hall">№ Зала</div>
+                      <div id="Modal_Info_Date">--.--.----   --:--</div>
+                      <div id="Modal_Info_Worker">Ф.И.О.  Сотрудника</div>
+                    </div>
+                  </div>
+
+                  <div id="Modal_Comment" class="event_comment">
+                    Comment: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </div>
+
+                  <div class="event_footer">
+                    <p id="Modal_Footer_DateRegistration">Дата регистрации события: --.--.---- Время: --:--</p>
+                  </div>
+                  
+                  <div class="modal_ivent_buttons">
+                    <button id="btnModal_Edit">Редактировать событие</button>
+                    <button id="btnModal_Close">X Закрыть</button>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+            <div class="VKSList_header">
+              <h2>События ВКС (в таблице):</h2>
+            </div>
+            <div class="VKSList_filters">
+              <button id="VKSTable_btnCreateVKS" class="VKSList_menu_btn">+ Создать новое событие ВКС</button>
+            </div>
+
+            <div id="VKSTable_wrapper" class="VKSTable_content_wrapper">
+              <!-- Место для рендера списка событий -->
+              <table id="VKSTable_id" class="VKSTable_table" cellspacing='0'>
+                <tr>
+                  <th>ID</th>
+                  <th>Объект ВКС</th>
+                  <th>Дата / Время</th>
+                  <th>Вх. / Исх.</th>
+                  <th>Судья</th>
+                  <th>№ Зала</th>
+                  <th>Зарегистрировал</th>
+                  <th>Дата регистрации</th>
+                  <th>Кнопки</th>
+                </tr><!-- Table Header -->
+               
+                <tr>
+                  <td>1</td>
+                  <td>Невельский городской суд</td>
+                  <td>19.06.2025 - 10:00</td>
+                  <td>Inbox</td>
+                  <td>Петров</td>
+                  <td>2</td>
+                  <td>Черных</td>
+                  <td>11.05.2025 - 12:47</td>
+                  <td>/-/-/-/-/-/-/-/-/-/-/-</td>
+                </tr><!-- Table Row -->
+               
+                <tr>
+                  <td>2</td>
+                  <td>Невельский городской суд</td>
+                  <td>19.06.2025 - 10:00</td>
+                  <td>Inbox</td>
+                  <td>Петров</td>
+                  <td>2</td>
+                  <td>Черных</td>
+                  <td>11.05.2025 - 12:47</td>
+                  <td>/-/-/-/-/-/-/-/-/-/-/-</td>
+                </tr><!-- Darker Table Row -->
+               
+                <tr>
+                  <td>3</td>
+                  <td>Невельский городской суд</td>
+                  <td>19.06.2025 - 10:00</td>
+                  <td>Inbox</td>
+                  <td>Петров</td>
+                  <td>2</td>
+                  <td>Черных</td>
+                  <td>11.05.2025 - 12:47</td>
+                  <td>/-/-/-/-/-/-/-/-/-/-/-</td>
+                </tr>
+               
+                <tr>
+                  <td>4</td>
+                  <td>Невельский городской суд</td>
+                  <td>19.06.2025 - 10:00</td>
+                  <td>Inbox</td>
+                  <td>Петров</td>
+                  <td>2</td>
+                  <td>Черных</td>
+                  <td>11.05.2025 - 12:47</td>
+                  <td>/-/-/-/-/-/-/-/-/-/-/-</td>
+                </tr>
+               
+                  <tr>
+                    <td>5</td>
+                    <td>Невельский городской суд</td>
+                    <td>19.06.2025 - 10:00</td>
+                    <td>Inbox</td>
+                    <td>Петров</td>
+                    <td>2</td>
+                    <td>Черных</td>
+                    <td>11.05.2025 - 12:47</td>
+                    <td>/-/-/-/-/-/-/-/-/-/-/-</td>
+                </tr>
+               
+                <tr>
+                  <td>6</td>
+                  <td>Невельский городской суд</td>
+                  <td>19.06.2025 - 10:00</td>
+                  <td>Inbox</td>
+                  <td>Петров</td>
+                  <td>2</td>
+                  <td>Черных</td>
+                  <td>11.05.2025 - 12:47</td>
+                  <td>/-/-/-/-/-/-/-/-/-/-/-</td>
+                </tr>
+               
+                <tr>
+                  <td>7</td>
+                  <td><a href="#">Невельский городской суд</a></td>
+                  <td><a href="#">19.06.2025 - 10:00</a></td>
+                  <td><a href="#">Inbox</a></td>
+                  <td><a href="#">Петров</a></td>
+                  <td><a href="#">2</a></td>
+                  <td><a href="#">Черных</a></td>
+                  <td><a href="#">11.05.2025 - 12:47</a></td>
+                  <td>/-/-/-/-/-/-/-/-/-/-/-</td>
+                </tr>
+              </table>
+              
+            </div>
+
+          </div>
+
+    </body>
+    <script type="text/javascript" src="/eel.js"></script>
+    <script src="./scripts/sidebar.js"></script>
+    <script src="./scripts/tableListVKS.js"></script>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="sidebar.css">
+    <link rel="stylesheet" type="text/css" href="create-VKS.css">
+    <title>VKS manager</title>
+  </head>
+
+  <body id="app">
+    
+    <div class="sidebar">
+      <div>
+
+        <img class="gerb_image" src="image/gerb.png"> <br />
+
+        <div class="profile_info">
+          Вы вошли как: <br />
+          <span id="sidebar_nickname"></span>
+        </div>
+
+        <div class="menu_wrapper">
+                
+          <span id="sidebar_menu"></span>
+          <span id="sidebar_adminka"></span>
+          
+        </div>
+
+      </div>
+    </div>
+
+    <div class="workspace">
+
+      <div class="CreateVKS_header">
+        <h2>Создание события ВКС:</h2>
+      </div>
+      <div class="CreateVKS_name_block"></div>
+
+      <table id="CreateVKS_table">
+        <tr>
+          <th>ID</th>
+          <td id="CreateVKS_id_container">--</td>
+        </tr>
+        <tr>
+          <th>Тип ВКС</th>
+          <td>
+            <select id="CreateVKS_Type" class="CreateVKS_input">
+              <option id="CreateVKS_TypeOption_Inbox" value="Inbox" selected>Входищий ВКС</option>
+              <option id="CreateVKS_TypeOption_Outbox" value="Outbox">Исходящий ВКС</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>Дата / Время события</th>
+          <td><input id="CreateVKS_Date" class="CreateVKS_input" type="datetime-local"></td>
+        </tr>
+        <tr>
+          <th>Объект ВКС</th>
+          <td><input id="CreateVKS_Object" class="CreateVKS_input" type="text" placeholder="Введите участника ВКС"></td>
+        </tr>
+        <tr>
+          <th>Судья</th>
+          <td><input id="CreateVKS_Judge" class="CreateVKS_input" type="text" placeholder="Ф.И.О. Судьи"></td>
+        </tr>
+        <tr>
+          <th>№ Зала</th>
+          <td><input id="CreateVKS_Hall" class="CreateVKS_input" type="text" placeholder="№ Зала"></td>
+        </tr>
+        <tr>
+          <th>Комментарий</th>
+          <td><textarea id="CreateVKS_Description" class="CreateVKS_input" placeholder="Введите описание..."></textarea></td>
+        </tr>
+        <tr>
+          <th>Сотрудник создавший запись</th>
+          <td id="CreateVKS_createWorker_container">--</td>
+        </tr>
+        <tr>
+          <th>Дата / Время создания события</th>
+          <td id="CreateVKS_createDate_container">--</td>
+        </tr>
+      </table>
+
+      <div class="createVKS_buttons_block">
+        <button id="btn_CreateVKS_create" class="btn create">+ Создать событие ВКС</button>
+      </div>
+    </div>
+
+    
+
+  </body>
+  <script type="text/javascript" src="/eel.js"></script>
+  <script src="./scripts/sidebar.js"></script>
+  <script src="./scripts/createVKS.js"></script>
+</html>

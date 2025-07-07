@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="sidebar.css">
+    <link rel="stylesheet" type="text/css" href="settings.css">
+    <title>VKS manager</title>
+  </head>
+  <body id="app">
+    
+    <div class="sidebar">
+      <div>
+
+        <img class="gerb_image" src="image/gerb.png"> <br />
+
+        <div class="profile_info">
+          Вы вошли как: <br />
+          <span id="sidebar_nickname"></span>
+        </div>
+
+        <div class="menu_wrapper">
+                
+          <span id="sidebar_menu"></span>
+          <span id="sidebar_adminka"></span>
+          
+        </div>
+
+      </div>
+    </div>
+
+    <div class="settins_wrapper">
+      Settings: <span id="settings_field"></span>
+      <br /><br /><br />
+      <b>Информация о программном изделии:</b> <br />
+      Application version: <span id="app_version"></span><br />
+      Python version: ------<br />
+      Поддерживаемые архитектуры: <b>x86 - x64</b><br />
+      Для работы приложения необходим установленный браузер <b>Google Chrome</b>
+      <br /><br />
+
+      Разработчик: Холмский городской суд<br />
+      Назначение ПО: для внутреннего использования.<br />
+      
+      <hr>
+      <br />
+
+      <button id="btnGetStatus" class="VKSList_menu_btn">Get Status</button>
+      <button id="btnSetWindowData" class="VKSList_menu_btn">Set Window Data</button>
+      
+      <br /><br /><hr><br />
+      <h3>Задачи:</h3>
+      <ul>
+        <li>Кнопка редактирования события ВКС</li>
+        <li><s>Кнопка удаления события ВКС</s></li>
+        <li>Кнопка печати события ВКС</li>
+        <li><s>Вывод таблицы ВКС отсортированной по дате</s></li>
+        <li>Страница отчета / вывод статистики</li>
+        <li>Форма ввода даты в 24х-часовом диапазоне</li>
+      </ul>
+      
+    </div>
+    
+
+  </body>
+  <script type="text/javascript" src="/eel.js"></script>
+  <script src="./scripts/sidebar.js"></script>
+  <script src="./scripts/settings.js"></script>
+</html>
