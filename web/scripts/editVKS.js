@@ -11,7 +11,13 @@ const EditVKS_createWorker = document.getElementById('EditVKS_createWorker_conta
 const EditVKS_createDate = document.getElementById('EditVKS_createDate_container');
 const btn_EditVKS = document.getElementById('btn_EditVKS_edit');
 
-function PrepareDate (dateIvent) {
+function PrepareRegistrationDate (registrationDate) {
+    date = new Date( parseInt(registrationDate) ).toISOString()
+    reqDate = new Date(date).toLocaleDateString()
+    reqTime = new Date(date).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
+    return `${reqDate} - ${reqTime}`
+}
+function PrepareIventDate (dateIvent) {
     let iventDateTime = new Date( parseInt(dateIvent) ).toISOString()
     let iventDate = iventDateTime.split('T')
     iventTime = new Date(iventDateTime).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
@@ -20,7 +26,8 @@ function PrepareDate (dateIvent) {
 
 eel.GetIventEdiPageData()().then( iventDataResponse => {
     console.log(iventDataResponse)
-    let Date = PrepareDate(iventDataResponse.iventDate)
+    let Date = PrepareIventDate(iventDataResponse.iventDate)
+    let reqDate = PrepareRegistrationDate(iventDataResponse.iventRegistrationDate)
 
     EditVKS_id_container.innerHTML = iventDataResponse.id
     if(iventDataResponse.iventType == 'Inbox') {
@@ -36,5 +43,5 @@ eel.GetIventEdiPageData()().then( iventDataResponse => {
     input_Hall.value = iventDataResponse.iventHall
     input_Description.value = iventDataResponse.iventDescription
     EditVKS_createWorker.innerHTML = iventDataResponse.iventWorker
-    // EditVKS_createDate.innerHTML = `${reqDate[0]} - ${reqTime}`
+    EditVKS_createDate.innerHTML = reqDate
 })
