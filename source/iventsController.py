@@ -54,35 +54,33 @@ def CreateNewIvent(iventData):
 
 @eel.expose
 def UpdateIvent(iventData):
+    sqlQuery = '''
+        UPDATE ivents SET 
+        iventDate = ?,
+        iventObject = ?,
+        iventType = ?,
+        iventJudge = ?,
+        iventHall = ?,
+        iventDescription = ? 
+        WHERE id = ?;'''
     try:
-        sqlQuery = '''
-            UPDATE ivents SET 
-            iventDate = ?,
-            iventObject = ?,
-            iventType = ?,
-            iventJudge = ?,
-            iventHall = ?,
-            iventDescription = ?,
-            iventWorker = ?,
-            iventRegistrationDate = ?
-            WHERE id = ?;'''
-        
         connection = sqlite3.connect('ivents.db')
         cursor = connection.cursor()
         cursor.execute(
             sqlQuery, (
-            iventData['nickname'],
-            iventData['password'],
-            iventData['rolle'],
-            iventData['firstName'],
-            iventData['patronymic'],
-            iventData['lastName'],
+            iventData['iventDate'],
+            iventData['iventObject'],
+            iventData['iventType'],
+            iventData['iventJudge'],
+            iventData['iventHall'],
+            iventData['iventDescription'],
             iventData['id'])
             )
         connection.commit()
         connection.close()
         return True
     except Exception as Error:
+        print(Error)
         return "Error"
 
 @eel.expose
