@@ -27,3 +27,8 @@ height: 100%;
 	flex-grow: 1;
 	position: relative;
   }
+.page_header {
+  padding: 20px 20px;
+  background: var(--color5);
+  color: var(--color3);
+}

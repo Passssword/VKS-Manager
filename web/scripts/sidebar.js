@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             <p class="munu_caption">ВКС События:</p>
             <a href="#" class="menuBtn">Список ВКС (not active)</a> <br />
             <a href="tableListVKS.html" class="menuBtn">Таблица ВКС</a> <br />
-            <a href="#" class="menuBtn">Отчеты ВКС (not active)</a> <br />
+            <a href="reportsPage.html" class="menuBtn">Отчеты ВКС</a> <br />
         `
         if (authData.rolle == "Admin") {
             sidebarAdminka.innerHTML = `
