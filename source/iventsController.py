@@ -97,3 +97,18 @@ def DeleteIvent(iventID):
     except Exception as Error:
         print(Error)
         return "Error"
+    
+@eel.expose
+def GetAllFromDiapazonDate(dateBegin, dateEnd):
+    sqlQuery = f'''SELECT * FROM ivents WHERE iventDate > {dateBegin} AND iventDate < {dateEnd}'''
+    print(sqlQuery)
+    try:
+        connection = sqlite3.connect('ivents.db')
+        cursor = connection.cursor()
+        cursor.execute(sqlQuery)
+        ivents = cursor.fetchall()
+        connection.close()
+        return ivents
+    except Exception as Error:
+        print(Error)
+        return "Error"

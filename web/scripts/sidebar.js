@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         sidebarNickname.innerHTML = authData.Nickname
         sidebarMenu.innerHTML = `
             <p class="munu_caption">ВКС События:</p>
-            <a href="#" class="menuBtn">Список ВКС (not active)</a> <br />
             <a href="tableListVKS.html" class="menuBtn">Таблица ВКС</a> <br />
             <a href="reportsPage.html" class="menuBtn">Отчеты ВКС</a> <br />
         `

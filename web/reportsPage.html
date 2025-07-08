@@ -42,18 +42,20 @@
         <h2>Отчеты и статистика ВКС:</h2>
       </div>
 
-      <div class="sort_settings_block">reportsPage</div>
+      <div class="sort_settings_block">
+        <h4>Вывести статистику по диапазону дат:</h4>
+        от <input id="reportDate_begin" class="reportDate_input" type="date">
+        до <input id="reportDate_end" class="reportDate_input" type="date">
+        <button id="btn_reportDate" class="btn">>> Вывести статистику</button>
+      </div>
 
       <div class="content_block">
-        <h3>Задачи:</h3>
-        <ul>
-          <li>---</li>
-          <li>---</li>
-          <li>---</li>
-          <li>---</li>
-          <li>---</li>
-          <li>---</li>
-        </ul>
+        <h3>Статистика за выбранный период:</h3>
+        Всего событий ВКС: <span id="reportDate_AllEventsCount">--</span> <br>
+        Исходящих ВКС: <span id="reportDate_OutputCount">--</span> <br>
+        Входящих ВКС: <span id="reportDate_InputCount">--</span> <br>
+        Событий ВКС во 2 зале: <span id="reportDate_Hall2_count">--</span> <br>
+        Событий ВКС в 4 зале: <span id="reportDate_Hall4_count">--</span> <br>
       </div>
       
     </div>
