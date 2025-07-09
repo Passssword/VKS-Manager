@@ -8,31 +8,6 @@
   padding: 20px 20px;
   background: var(--color3);
 }
-#create_User {
-  width: 80%;
-  min-width: 400px;
-  max-width: 600px;
-  background: var(--color3);
-  margin: 20px auto;
-  border-collapse: collapse;
-  text-align: left;
-}
-#create_User th {
-    font-weight: normal;
-    color: #039;
-    border-bottom: 2px solid #6678b1;
-    padding: 10px 8px;
-  }
-#create_User td {
-    border-bottom: 1px solid var(--color7);
-    color: var(--color1);
-    padding: 9px 8px;
-    transition: .3s linear;
-  }
-#create_User tr:hover td {
-    background: var(--color6);
-    color: var(--color3);
-  }
 .createUser_buttons_block {
     width: 80%;
     min-width: 400px;

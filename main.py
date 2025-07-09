@@ -8,6 +8,8 @@ eel.init('web')
 
 eel.start('loginPage.html',
           mode='edge'
+          # mode='chrome'
+          # mode='yandex'
     #   size=(700,400),
     #   geometry={'tableListVKS.html': {}}
       )
