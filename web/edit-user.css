@@ -8,7 +8,7 @@
     background: var(--color3);
     font-size: 20px;
 }
-#edit_User {
+/* #edit_User {
     width: 80%;
     min-width: 400px;
     max-width: 600px;
@@ -32,7 +32,7 @@
 #edit_User tr:hover td {
     background: var(--color6);
     color: var(--color3);
-  }
+  } */
 .editUser_buttons_block {
     width: 80%;
     min-width: 400px;
