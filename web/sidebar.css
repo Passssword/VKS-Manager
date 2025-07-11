@@ -16,3 +16,26 @@
     color: var(--color2);
 }
 .menuBtn:hover {color: var(--color4);}
+
+.menu_button {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-align: center;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 3px;
+    display: block;
+    margin: 5px auto;
+    position: relative;
+    z-index: 1;
+    transition: all 250ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    color: var(--color2);
+    text-decoration: none;
+    border: solid 1px var(--color2);
+    background: none;
+}
+.menu_button:hover {
+    color: var(--color4);
+    background: var(--color2);
+}
