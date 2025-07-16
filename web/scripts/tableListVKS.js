@@ -101,7 +101,6 @@ eel.GetAllIvents()().then( ivents => {
     console.log(ivents)
 
     let iventsMap = mapIvents(ivents)
-    console.log(iventsMap)
     let iventsHTML = arrToString(iventsMap)
 
     VKSTable_id.innerHTML = usersTableCaptions + iventsHTML

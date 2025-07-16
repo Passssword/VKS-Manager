@@ -76,3 +76,42 @@ def DeleteUser(userID):
     except Exception as Error:
         print(Error)
         return "Error"
+
+@eel.expose
+def GetAllJudges():
+    try:
+        connection = sqlite3.connect('users.db')
+        cursor = connection.cursor()
+        cursor.execute('SELECT * FROM judges')
+        judges = cursor.fetchall()
+        connection.close()
+        
+        return judges
+
+    except Exception as Error:
+        print(Error)
+        return "Error"
+
+@eel.expose
+def CreateJudge (judgeName):
+    createTableQuery = '''
+        CREATE TABLE IF NOT EXISTS judges (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL
+        )
+        '''
+    sqlQuery = '''INSERT INTO judges (name) VALUES ( ? )'''
+    deleteTableQuery = '''DROP TABLE judges'''
+    print(type(judgeName))
+    print(judgeName)
+    try:
+        connection = sqlite3.connect('users.db')
+        cursor = connection.cursor()
+        cursor.execute(createTableQuery)
+        cursor.execute(sqlQuery, (judgeName,) )
+        connection.commit()
+        connection.close()
+        return True
+    except Exception as Error:
+        print(Error)
+        return "Error"

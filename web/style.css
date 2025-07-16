@@ -94,3 +94,90 @@ background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
   border-radius: 3px;
   border: 1px solid #dcdcdc;
 }
+
+/*------------------------------*/
+/*-------- Button's ------------*/
+/*------------------------------*/
+
+.btn {
+	/* min-width: 100px; */
+	font-family: inherit;
+	appearance: none;
+	position: relative;
+	border: 0;
+	border-radius: 5px;
+	padding: 1px 5px 1px 5px;
+	font-size: 15px;
+	cursor: pointer;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.btn:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+/* Pseudo elements for icons */
+.btn:before {
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+	background: rgba(0,0,0,0.15);
+}
+.delete {
+	background: #e74c3c;
+	color: #fff;
+	/* background: no-repeat left/27% url('image/delete.png'), #e74c3c; */
+}
+.delete:hover {
+	background: #c0392b;
+	/* background: no-repeat left/30% url('image/delete.png'), #c0392b; */
+}
+.delete:active {
+	background: #c0392b;
+	/* background: no-repeat left/30% url('image/delete.png'), #c0392b; */
+	top: 2px;
+}
+.delete:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px #cbd6ee;
+}
+
+.edit {
+	background: var(--color7);
+	color: #fff;
+	/* background: no-repeat left/27% url('image/edit-icon-1.png'), var(--color7); */
+}
+.edit:hover {
+	background: #86a7a7;;
+	/* background: no-repeat left/30% url('image/edit-icon-1.png'), #86a7a7; */
+}
+.edit:active {
+	background: #a4d6d6;;
+	/* background: no-repeat left/30% url('image/edit-icon-1.png'), #a4d6d6; */
+	top: 2px;
+}
+
+.print {
+	background: var(--color5);
+	color: #fff;
+	/* background: no-repeat left/27% url('image/print-icon-1.png'), var(--color5); */
+}
+.print:hover {
+	background: #86a7a7;
+	/* background: no-repeat left/30% url('image/print-icon-1.png'), #86a7a7; */
+}
+.print:active {
+	background: #a4d6d6;
+	/* background: no-repeat left/30% url('image/print-icon-1.png'), #a4d6d6; */
+	top: 2px;
+}
