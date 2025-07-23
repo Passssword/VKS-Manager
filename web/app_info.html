@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="sidebar.css">
+    <link rel="stylesheet" type="text/css" href="app_info.css">
+    <title>VKS manager</title>
+  </head>
+  <body id="app">
+    
+    <div class="sidebar">
+      <div>
+
+        <img class="gerb_image" src="image/gerb.png"> <br />
+
+        <div class="profile_info">
+          Вы вошли как: <br />
+          <span id="sidebar_nickname"></span>
+        </div>
+
+        <div class="menu_wrapper">
+                
+          <span id="sidebar_menu"></span>
+          <span id="sidebar_adminka"></span>
+          
+        </div>
+
+      </div>
+      <div>
+        <a href="app_info.html" class="menu_button">О Приложении</a>
+      </div>
+    </div>
+
+    <div class="wrapper">
+
+      <br /><br /><br />
+      <b>Информация о программном изделии:</b> <br />
+      Версия: <span id="app_version">1.0.0</span><br />
+      Python version: 3.8.9<br />
+      Поддерживаемые архитектуры: <b>x86 - x64</b><br />
+      Для работы приложения необходим установленный браузер <b>Google Chrome</b>
+      <br /><br />
+
+      Разработчик: Холмский городской суд<br />
+      Назначение ПО: для внутреннего использования.<br />
+      <br />
+      <hr>
+
+      <br />
+      <h3>Расшифровка сокращений:</h3>
+      ВКС - Видео-конференц связь
+
+      <br /><br />
+      <h3>История версий:</h3>
+      1.0.0 - Первая редакция, наличие базового функцианала
+
+      <br /><br /><hr><br />
+      <h3>Задачи:</h3>
+      <ul>
+        <li><s>Кнопка редактирования события ВКС</s></li>
+        <li><s>Кнопка удаления события ВКС</s></li>
+        <li>Кнопка печати события ВКС</li>
+        <li><s>Вывод таблицы ВКС отсортированной по дате</s></li>
+        <li><s>Страница отчета / вывод статистики</s></li>
+        <li>Форма ввода даты в 24х-часовом диапазоне</li>
+        <li>Выход из системы (разлогинится)</li>
+        <li>Страница информации об приложении</li>
+        <li>Вывод статистики по судьям</li>
+        <li>Учет многоточечных ВКС</li>
+      </ul>
+    </div>
+    
+
+  </body>
+  <script type="text/javascript" src="/eel.js"></script>
+  <script src="./scripts/sidebar.js"></script>
+  <script src="./scripts/app_info.js"></script>
+</html>
