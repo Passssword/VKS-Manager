@@ -95,6 +95,27 @@ background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
   border: 1px solid #dcdcdc;
 }
 
+.simple_Table{
+    margin: 10px 0px 10px 0px;
+    /* border: 1px solid #69c; */
+    border-spacing: 0;
+    /* width: 100%; */
+}
+.simple_Table th {
+    font-weight: bold;
+    color: var(--color5);
+    border-bottom: 2px solid var(--color7);
+    padding: 12px 17px;
+    text-align: left;
+}
+.simple_Table tr>td:nth-child(2) {min-width: 250px;}
+.simple_Table td {
+    background: var(--color2);
+    border-bottom: 1px solid var(--color7);
+    color: var(--color5);
+    border-top: 1px solid transparent;
+    padding: 8px 15px;
+}
 /*------------------------------*/
 /*-------- Button's ------------*/
 /*------------------------------*/
