@@ -125,7 +125,7 @@ background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
 	font-family: inherit;
 	appearance: none;
 	position: relative;
-	border: 0;
+	border: 1px solid var(--color1);
 	border-radius: 5px;
 	padding: 1px 5px 1px 5px;
 	font-size: 15px;
@@ -154,6 +154,15 @@ background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
 	-webkit-font-smoothing: antialiased;
 	background: rgba(0,0,0,0.15);
 }
+.create {
+	background: #059c49;
+	color: #fff;
+	/* background: no-repeat left/27% url('image/delete.png'), #e74c3c; */
+}
+.create:hover {
+	background: #86d47b;
+	/* background: no-repeat left/30% url('image/delete.png'), #c0392b; */
+}
 .delete {
 	background: #e74c3c;
 	color: #fff;
@@ -174,16 +183,16 @@ background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
 }
 
 .edit {
-	background: var(--color7);
+	background: #dab246;
 	color: #fff;
 	/* background: no-repeat left/27% url('image/edit-icon-1.png'), var(--color7); */
 }
 .edit:hover {
-	background: #86a7a7;;
+	background: #ffd971;
 	/* background: no-repeat left/30% url('image/edit-icon-1.png'), #86a7a7; */
 }
 .edit:active {
-	background: #a4d6d6;;
+	background: #bbbbbb;;
 	/* background: no-repeat left/30% url('image/edit-icon-1.png'), #a4d6d6; */
 	top: 2px;
 }
