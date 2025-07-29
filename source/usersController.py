@@ -93,25 +93,26 @@ def GetAllJudges():
         return "Error"
 
 @eel.expose
-def CreateJudge (judgeName):
+def CreateJudge (judgeName, judgeStatus):
     createTableQuery = '''
         CREATE TABLE IF NOT EXISTS judges (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        name TEXT NOT NULL
+        name TEXT NOT NULL,
+        status TEXT NOT NULL
         )
         '''
-    sqlQuery = '''INSERT INTO judges (name) VALUES ( ? )'''
+    sqlQuery = '''INSERT INTO judges (name, status) VALUES ( ?, ? )'''
     deleteTableQuery = '''DROP TABLE judges'''
-    print(type(judgeName))
-    print(judgeName)
+    print(f"judgeName: {judgeName}, dataType: {type(judgeName)}")
+    print(f"judgeStatus: {judgeStatus}, dataType: {type(judgeStatus)}")
     try:
         connection = sqlite3.connect('users.db')
         cursor = connection.cursor()
         cursor.execute(createTableQuery)
-        cursor.execute(sqlQuery, (judgeName,) )
+        cursor.execute(sqlQuery, (judgeName, judgeStatus) )
         connection.commit()
         connection.close()
         return True
     except Exception as Error:
         print(Error)
-        return "Error"
+        return False
