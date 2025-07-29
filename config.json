@@ -1,0 +1,20 @@
+{
+    "AppInfo": {
+        "version": "1.0.3"
+        },
+    "Settings": {
+        "path": null
+    },
+    "Halls": [
+        {
+            "Id": 1,
+            "HallName": "Зал №2",
+            "IpAdress": "10.65.64.50"
+        },
+        {
+            "Id": 2,
+            "HallName": "Зал №4",
+            "IpAdress": "10.65.64.52"
+        }
+    ]
+}

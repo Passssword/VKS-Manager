@@ -1,5 +1,6 @@
 import eel
 import source.usersController
+import source.configController
 import source.iventsController
 import source.stateManager
 import source.autheficationController

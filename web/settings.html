@@ -43,37 +43,22 @@
     <div class="settins_wrapper">
       
       <div class="content_block">
-        <h4>Настройки:</h4> <span id="settings_field"></span>
+        <h4>Настройки:</h4> <span id="settings_field">settings_field</span>
       </div>
 
       <div class="content_block">
-        <h4>Управление залами:</h4>
-        <table id="HallTableID" class="simple_Table">
-          <tr>
-            <th>ID</th>
-            <th>Зал</th>
-            <th>IP Адресс</th>
-            <th>Кнопки действия</th>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Зал №2</td>
-            <td>10.65.64.50</td>
-            <td><button class="btn edit">Редактировать</button></td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Зал №4</td>
-            <td>10.65.64.52</td>
-            <td><button class="btn edit">Редактировать</button></td>
-          </tr>
-        </table>
+        <h4>Список залов:</h4>
+        <table id="HallTableID" class="simple_Table"></table>
       </div>
 
       <div class="content_block">
         <div class="block_1">
           <h4>Добавить судью:</h4>
           <input id="judge_Name" type="text" placeholder="Введите имя судьи">
+          <select id="CreateJudge_Status" class="select">
+            <option value="Active" selected>Действующий</option>
+            <option value="Retired">В отставке</option>
+          </select>
           <button id="btn_AddJudge" class="btn create">+ Добавить судью</button>
         </div>
         <h4>Список судей:</h4>
