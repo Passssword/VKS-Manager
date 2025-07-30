@@ -50,10 +50,6 @@
 
       <table id="CreateVKS_table">
         <tr>
-          <th>ID</th>
-          <td id="CreateVKS_id_container">--</td>
-        </tr>
-        <tr>
           <th>Тип ВКС</th>
           <td>
             <select id="CreateVKS_Type" class="CreateVKS_input">
@@ -70,9 +66,15 @@
           <th>Объект ВКС</th>
           <td><input id="CreateVKS_Object" class="CreateVKS_input" type="text" placeholder="Введите участника ВКС"></td>
         </tr>
-        <tr>
+        <!-- <tr>
           <th>Судья</th>
           <td><input id="CreateVKS_Judge" class="CreateVKS_input" type="text" placeholder="Ф.И.О. Судьи"></td>
+        </tr> -->
+        <tr>
+          <th>Судья</th>
+          <td>
+            <select id="CreateVKS_JudgeList" class="CreateVKS_input"></select>
+          </td>
         </tr>
         <tr>
           <th>№ Зала</th>
@@ -81,14 +83,6 @@
         <tr>
           <th>Комментарий</th>
           <td><textarea id="CreateVKS_Description" class="CreateVKS_input" placeholder="Введите описание..."></textarea></td>
-        </tr>
-        <tr>
-          <th>Сотрудник создавший запись</th>
-          <td id="CreateVKS_createWorker_container">--</td>
-        </tr>
-        <tr>
-          <th>Дата / Время создания события</th>
-          <td id="CreateVKS_createDate_container">--</td>
         </tr>
       </table>
 
@@ -103,4 +97,5 @@
   <script type="text/javascript" src="/eel.js"></script>
   <script src="./scripts/sidebar.js"></script>
   <script src="./scripts/createVKS.js"></script>
+  <script src="./scripts/createVKS_judgeList.js"></script>
 </html>

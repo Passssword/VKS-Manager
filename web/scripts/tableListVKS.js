@@ -97,14 +97,29 @@ let usersTableCaptions = `<tr>
                             <th>Кнопки</th>
                         </tr>`
 
-eel.GetAllIvents()().then( ivents => {
-    console.log(ivents)
+eel.GetJudgesData()().then(async judgesData => {
+    console.log(judgesData)
+    let Ivents = await eel.GetAllIvents()()
+    console.log(Ivents)
 
-    let iventsMap = mapIvents(ivents)
+    let iventsMap = mapIvents(Ivents)
     let iventsHTML = arrToString(iventsMap)
 
     VKSTable_id.innerHTML = usersTableCaptions + iventsHTML
-    AddEventsButtons(ivents)
-
-    VKSTable_btnCreateVKS.onclick = function () {window.location.replace("create-VKS.html");}
+    AddEventsButtons(Ivents)
 })
+
+VKSTable_btnCreateVKS.onclick = function () {window.location.replace("create-VKS.html");}
+
+
+// eel.GetAllIvents()().then( ivents => {
+//     console.log(ivents)
+
+//     let iventsMap = mapIvents(ivents)
+//     let iventsHTML = arrToString(iventsMap)
+
+//     VKSTable_id.innerHTML = usersTableCaptions + iventsHTML
+//     AddEventsButtons(ivents)
+
+//     VKSTable_btnCreateVKS.onclick = function () {window.location.replace("create-VKS.html");}
+// })

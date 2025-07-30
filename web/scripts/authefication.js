@@ -13,7 +13,11 @@ btnInterSystem.onclick = async function () {
         if (result != null){
             console.log(result)
             eel.UpdateUserData(result[1], result[3], result[4], result[6], result[5])
-            window.location.replace("tableListVKS.html");
+            eel.GetAllJudges()().then( jugdesData => {
+                eel.SetJudgesData(jugdesData)
+                window.location.replace("tableListVKS.html");
+            })
+            
         }
         else{
             console.log("Пользователь не найден")

@@ -31,7 +31,8 @@ initialState = {
             "iventWorker": "",
             "iventRegistrationDate": ""
         }
-    }
+    },
+    "JudgeData": []
 }
 
 @eel.expose
@@ -87,3 +88,19 @@ def SetIventEdiPageData(
     initialState['IventEditPageData']['IventData']['iventWorker'] = iventWorker
     initialState['IventEditPageData']['IventData']['iventRegistrationDate'] = iventRegistrationDate
     return True
+
+@eel.expose
+def SetJudgesData(judgesData):
+    judgesList = []
+    print(judgesData)
+    print(type(judgesData))
+    for judgeObj in judgesData:
+        judgesList.append(
+            {"Id": judgeObj[0], "name": judgeObj[1], "status": judgeObj[2]}
+        )
+    initialState['JudgeData'] = judgesList
+    return True
+
+@eel.expose
+def GetJudgesData():
+    return initialState['JudgeData']
