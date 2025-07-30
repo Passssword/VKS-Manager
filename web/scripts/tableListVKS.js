@@ -2,7 +2,7 @@
 const VKSTable_id = document.getElementById('VKSTable_id');
 const VKSTable_btnCreateVKS = document.getElementById('VKSTable_btnCreateVKS');
 
-const mapIvents = (ivents) => {
+const mapIvents = (ivents, judgesData) => {
 
     return ivents.map(ivent => {
         let date = null;
@@ -25,13 +25,15 @@ const mapIvents = (ivents) => {
             dateIvent = `${iventDate} - ${iventTime}`
         } else { dateIvent = `not date` }
 
+        let jaugeObj = judgesData.find( judgesData => judgesData.Id == ivent[4])
+        
         return (`
             <tr class="VKSTable_tr_iventWrapper">
                   <td>${ivent[0]}</td>
                   <td><a href="#">${ivent[2]}</a></td>
                   <td><a href="#">${dateIvent}</a></td>
                   <td><a href="#">${ivent[3]}</a></td>
-                  <td><a href="#">${ivent[4]}</a></td>
+                  <td><a href="#">${isNaN(ivent[4]) ? ivent[4] : jaugeObj.name}</a></td>
                   <td><a href="#">${ivent[5]}</a></td>
                   <td><a href="#">${ivent[7]}</a></td>
                   <td><a href="#">${dateCreateIvent}</a></td>
@@ -102,7 +104,7 @@ eel.GetJudgesData()().then(async judgesData => {
     let Ivents = await eel.GetAllIvents()()
     console.log(Ivents)
 
-    let iventsMap = mapIvents(Ivents)
+    let iventsMap = mapIvents(Ivents, judgesData)
     let iventsHTML = arrToString(iventsMap)
 
     VKSTable_id.innerHTML = usersTableCaptions + iventsHTML
