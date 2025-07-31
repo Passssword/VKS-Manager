@@ -26,14 +26,14 @@ const mapIvents = (ivents, judgesData) => {
         } else { dateIvent = `not date` }
 
         let jaugeObj = judgesData.find( judgesData => judgesData.Id == ivent[4])
-        
+
         return (`
             <tr class="VKSTable_tr_iventWrapper">
                   <td>${ivent[0]}</td>
                   <td><a href="#">${ivent[2]}</a></td>
                   <td><a href="#">${dateIvent}</a></td>
                   <td><a href="#">${ivent[3]}</a></td>
-                  <td><a href="#">${isNaN(ivent[4]) ? ivent[4] : jaugeObj.name}</a></td>
+                  <td><a href="#">${isNaN(ivent[4]) ? ivent[4]+' -edit' : jaugeObj.name}</a></td>
                   <td><a href="#">${ivent[5]}</a></td>
                   <td><a href="#">${ivent[7]}</a></td>
                   <td><a href="#">${dateCreateIvent}</a></td>

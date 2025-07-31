@@ -5,6 +5,7 @@ const input_Type = document.getElementById('EditVKS_Type');
 const Option_Inbox = document.getElementById('EditVKS_TypeOption_Inbox');
 const Option_Outbox = document.getElementById('EditVKS_TypeOption_Outbox');
 const input_Judge = document.getElementById('EditVKS_Judge');
+const JudgeSelectList = document.getElementById('EditVKS_JudgeList');
 const input_Hall = document.getElementById('EditVKS_Hall');
 const input_Description = document.getElementById('EditVKS_Description');
 const EditVKS_createWorker = document.getElementById('EditVKS_createWorker_container');
@@ -52,7 +53,7 @@ btn_EditVKS.onclick = function () {
         iventDate: Date.parse(eventDate),
         iventObject: input_Object.value,
         iventType: input_Type.value,
-        iventJudge: input_Judge.value,
+        iventJudge: JudgeSelectList.value,
         iventHall: input_Hall.value,
         iventDescription: input_Description.value,
         id: EditVKS_id_container.innerHTML
