@@ -4,7 +4,6 @@ const input_Object = document.getElementById('EditVKS_Object');
 const input_Type = document.getElementById('EditVKS_Type');
 const Option_Inbox = document.getElementById('EditVKS_TypeOption_Inbox');
 const Option_Outbox = document.getElementById('EditVKS_TypeOption_Outbox');
-const input_Judge = document.getElementById('EditVKS_Judge');
 const JudgeSelectList = document.getElementById('EditVKS_JudgeList');
 const input_Hall = document.getElementById('EditVKS_Hall');
 const input_Description = document.getElementById('EditVKS_Description');
@@ -40,7 +39,6 @@ eel.GetIventEdiPageData()().then( iventDataResponse => {
     }
     input_Date.value = Date
     input_Object.value = iventDataResponse.iventObject
-    input_Judge.value = iventDataResponse.iventJudge
     input_Hall.value = iventDataResponse.iventHall
     input_Description.value = iventDataResponse.iventDescription
     EditVKS_createWorker.innerHTML = iventDataResponse.iventWorker
