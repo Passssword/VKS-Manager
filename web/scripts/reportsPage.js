@@ -6,6 +6,7 @@ const OutputCount = document.getElementById('reportDate_OutputCount');
 const InputCount = document.getElementById('reportDate_InputCount');
 const Hall2_Count = document.getElementById('reportDate_Hall2_count');
 const Hall4_Count = document.getElementById('reportDate_Hall4_count');
+const judgeTable = document.getElementById('judgeTableID');
 
 function CalculateStatistics (eventsArray) {
     const results = {

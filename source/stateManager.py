@@ -92,8 +92,6 @@ def SetIventEdiPageData(
 @eel.expose
 def SetJudgesData(judgesData):
     judgesList = []
-    print(judgesData)
-    print(type(judgesData))
     for judgeObj in judgesData:
         judgesList.append(
             {"Id": judgeObj[0], "name": judgeObj[1], "status": judgeObj[2]}
