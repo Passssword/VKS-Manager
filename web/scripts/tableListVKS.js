@@ -37,9 +37,9 @@ const mapIvents = (ivents, judgesData) => {
                   <td><a href="#">${ivent[7]}</a></td>
                   <td><a href="#">${dateCreateIvent}</a></td>
                   <td>
-                    <button class="btn print">Print</button>
-                    <button class="btn edit">Edit</button>
-                    <button class="btn delete">Delete</button>
+                    <button class="btn print">Печать</button>
+                    <button class="btn edit">Редактировать</button>
+                    <button class="btn delete">Удалить</button>
                   </td>
             </tr>
         `)

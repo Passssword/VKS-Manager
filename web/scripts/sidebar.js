@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', async function() {
         if (authData.rolle == "Admin") {
             sidebarAdminka.innerHTML = `
             <p class="munu_caption">Настройки:</p>
-            <a href="settings.html" class="menu_button">Settins</a>
-            <a href="usersPage.html" class="menu_button">Users</a>
+            <a href="settings.html" class="menu_button">Настройки</a>
+            <a href="usersPage.html" class="menu_button">Пользователи</a>
             <a href="judgeManagerPage.html" class="menu_button">Судьи</a>
         `
     }
