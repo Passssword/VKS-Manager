@@ -8,9 +8,11 @@ import source.autheficationController
 eel.init('web')
 
 eel.start('loginPage.html',
-          mode='edge'
+          mode='edge',
+          port='23547'
           # mode='chrome'
           # mode='yandex'
     #   size=(700,400),
-    #   geometry={'tableListVKS.html': {}}
+    #   geometry={'tableListVKS.html': {}},
+    
       )

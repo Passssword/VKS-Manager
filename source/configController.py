@@ -8,7 +8,6 @@ def ReadConfig():
     try:
         with open(configFileName, 'r', encoding='utf-8') as file:  
             dataJson = json.load(file)
-            print(dataJson)
         return dataJson
     except Exception as Error:
         return Error

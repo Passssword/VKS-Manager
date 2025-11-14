@@ -112,3 +112,30 @@ def GetAllFromDiapazonDate(dateBegin, dateEnd):
     except Exception as Error:
         print(Error)
         return "Error"
+
+@eel.expose
+def DeleteAllFromDiapazonDate(dateBegin, dateEnd):
+    # Получить события на диапазон дат
+    resultList = GetAllFromDiapazonDate(dateBegin, dateEnd)
+    
+    # Сформировать объект списка с вложенными кортежами
+    ids_list = []
+    for element in resultList:
+        temporary_tuple = (element[0],)
+        ids_list.append(temporary_tuple)
+        print(element[0])
+
+    # Удалить события из базы 
+    sqlQuery = f'''DELETE from ivents WHERE id=?'''
+    try:
+        connection = sqlite3.connect('ivents.db')
+        cursor = connection.cursor()
+        cursor.executemany(sqlQuery, ids_list)
+        connection.commit()
+        print("Удалено записей:", cursor.rowcount)
+        connection.commit()
+        cursor.close()
+        return "Ok"
+    except Exception as Error:
+        print(Error)
+        return "Error"

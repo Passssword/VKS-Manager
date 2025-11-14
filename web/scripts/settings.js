@@ -1,3 +1,7 @@
+const input_delete_beginDate = document.getElementById('input_delete_beginDate');
+const input_delete_endDate = document.getElementById('input_delete_endDate');
+const btn_deleteAllForDate = document.getElementById('btn_deleteAllForDate');
+
 const SettingsField = document.getElementById('settings_field');
 const HallTableID = document.getElementById('HallTableID');
 const judgeTableID = document.getElementById('judgeTableID');
@@ -5,6 +9,33 @@ const judgeTableID = document.getElementById('judgeTableID');
 const judge_Name = document.getElementById('judge_Name');
 const judge_Status = document.getElementById('CreateJudge_Status');
 const button_AddJudge = document.getElementById('btn_AddJudge');
+
+
+btn_deleteAllForDate.onclick = function () {
+    // Обработчик удаления событий ВКС на выбранный диапазон дат
+
+    // Получаем даты на начало дня и конец дня
+    const beginDate = new Date(input_delete_beginDate.value).setHours(0)
+    const endDate = new Date(input_delete_endDate.value).setHours(23,59,59)
+
+    console.log("Дата на начало дня: "+beginDate)
+    console.log("Дата на конец дня: "+endDate)
+
+    eel.DeleteAllFromDiapazonDate(beginDate, endDate)().then( events => {
+        console.log(events)
+    })
+    // eel.GetAllFromDiapazonDate(beginDate, endDate)().then( events => {
+
+    //     const resultStatistics = CalculateStatistics(events)
+        
+    //     AllEventsCount.innerHTML = resultStatistics.totalEvents
+    //     OutputCount.innerHTML = resultStatistics.totalOutputsCount
+    //     InputCount.innerHTML = resultStatistics.totalInputsCount
+    //     Hall2_Count.innerHTML = resultStatistics.totalHall2Count
+    //     Hall4_Count.innerHTML = resultStatistics.totalHall4Count
+    // })
+}
+
 
 const mapHalls = (halls) => {
     return halls.map(hall => {
