@@ -16,6 +16,8 @@ height: 100%;
     --color5: #546A7B;
     --color6: #d3d4d8;
     --color7: #b7b8bd;
+    --colorRed_1: #e44d4d;
+    --colorRed_2: #e4c7c7;
   }
 #app {
     display: flex;
@@ -37,7 +39,20 @@ height: 100%;
     padding: 12px;
   }
 .gerb_wrapper img {width: 180px;}
-.fields_wrapper {flex-grow: 1;}
+.fields_wrapper {
+    position: relative;
+    flex-grow: 1;
+}
+.auth_alert_block {
+    position: absolute;
+    top: -60px;
+    left: 15px;
+    background: var(--colorRed_2);
+    padding: 5px 10px;
+    border: 2px solid var(--colorRed_1);
+    font-size: 14px;
+    display: none;
+}
 
   /* Every row inside .login-container is defined with p tags */
 .login-container p {

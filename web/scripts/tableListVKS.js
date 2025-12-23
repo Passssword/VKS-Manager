@@ -31,13 +31,13 @@ const mapIvents = (ivents, judgesData) => {
                   <td>${ivent[0]}</td>
                   <td><a href="#">${ivent[2]}</a></td>
                   <td><a href="#">${dateIvent}</a></td>
-                  <td><a href="#">${ivent[3]}</a></td>
+                  <td><a href="#">${ivent[3] == 'Inbox' ? 'Входящий ВКС' : 'Исходящий ВКС'}</a></td>
                   <td><a href="#">${judgeObj.name}</a></td>
                   <td><a href="#">${ivent[5]}</a></td>
                   <td><a href="#">${ivent[7]}</a></td>
                   <td><a href="#">${dateCreateIvent}</a></td>
                   <td>
-                    <button class="btn print">Печать</button>
+                    <!-- <button class="btn print">Печать</button> -->
                     <button class="btn edit">Редактировать</button>
                     <button class="btn delete">Удалить</button>
                   </td>

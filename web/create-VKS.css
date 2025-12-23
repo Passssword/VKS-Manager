@@ -66,6 +66,9 @@
     border-radius: 3px;
     border: 1px solid #dcdcdc;
 }
+textarea {
+    height: 12vh;
+}
 .createVKS_buttons_block {
     width: 80%;
     min-width: 400px;

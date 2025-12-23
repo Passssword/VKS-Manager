@@ -4,10 +4,11 @@
 const fieldLogin = document.getElementById('login');
 const fieldPassword = document.getElementById('password');
 const btnInterSystem = document.getElementById('btnInterSystem');
+const alertBlock = document.getElementById('alert_block');
 
 btnInterSystem.onclick = async function () {
     let authData = {login: fieldLogin.value, password: fieldPassword.value}
-    
+    alertBlock.style.display = 'none'
     eel.AuteficateUser(fieldLogin.value, fieldPassword.value)().then( result => {
         
         if (result != null){
@@ -21,6 +22,7 @@ btnInterSystem.onclick = async function () {
         }
         else{
             console.log("Пользователь не найден")
+            alertBlock.style.display = 'block'
         }
     } )
 
