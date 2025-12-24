@@ -45,7 +45,7 @@ height: 100%;
 }
 .auth_alert_block {
     position: absolute;
-    top: -60px;
+    top: -140px;
     left: 15px;
     background: var(--colorRed_2);
     padding: 5px 10px;
@@ -53,6 +53,7 @@ height: 100%;
     font-size: 14px;
     display: none;
 }
+.auth_alert_block hr {border: 1px solid var(--colorRed_1);}
 
   /* Every row inside .login-container is defined with p tags */
 .login-container p {
