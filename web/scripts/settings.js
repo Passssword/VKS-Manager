@@ -2,6 +2,10 @@ const input_delete_beginDate = document.getElementById('input_delete_beginDate')
 const input_delete_endDate = document.getElementById('input_delete_endDate');
 const btn_deleteAllForDate = document.getElementById('btn_deleteAllForDate');
 
+const input_export_beginDate = document.getElementById('input_export_beginDate');
+const input_export_endDate = document.getElementById('input_export_endDate');
+const btn_exportWord = document.getElementById('btn_exportWord');
+
 const SettingsField = document.getElementById('settings_field');
 const HallTableID = document.getElementById('HallTableID');
 const judgeTableID = document.getElementById('judgeTableID');
@@ -24,18 +28,22 @@ btn_deleteAllForDate.onclick = function () {
     eel.DeleteAllFromDiapazonDate(beginDate, endDate)().then( events => {
         console.log(events)
     })
-    // eel.GetAllFromDiapazonDate(beginDate, endDate)().then( events => {
-
-    //     const resultStatistics = CalculateStatistics(events)
-        
-    //     AllEventsCount.innerHTML = resultStatistics.totalEvents
-    //     OutputCount.innerHTML = resultStatistics.totalOutputsCount
-    //     InputCount.innerHTML = resultStatistics.totalInputsCount
-    //     Hall2_Count.innerHTML = resultStatistics.totalHall2Count
-    //     Hall4_Count.innerHTML = resultStatistics.totalHall4Count
-    // })
+    
 }
 
+btn_exportWord.onclick = function () {
+    // Получаем даты на начало дня и конец дня
+    const beginDate = new Date(input_export_beginDate.value).setHours(0)
+    const endDate = new Date(input_export_endDate.value).setHours(23,59,59)
+
+    console.log("Дата на начало дня: "+beginDate)
+    console.log("Дата на конец дня: "+endDate)
+
+    eel.GetAllFromDiapazonDate(beginDate, endDate)().then( events => {
+        console.log(events)
+        eel.CreateWordFile(events)
+    })
+}
 
 const mapHalls = (halls) => {
     return halls.map(hall => {

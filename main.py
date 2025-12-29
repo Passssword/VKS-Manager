@@ -4,6 +4,7 @@ import source.configController
 import source.iventsController
 import source.stateManager
 import source.autheficationController
+import source.exportWordController
 
 eel.init('web')
 
