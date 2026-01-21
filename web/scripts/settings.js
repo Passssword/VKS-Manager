@@ -41,7 +41,7 @@ btn_exportWord.onclick = function () {
 
     eel.GetAllFromDiapazonDate(beginDate, endDate)().then( events => {
         console.log(events)
-        eel.CreateWordFile(events)
+        eel.CreateWordFile(events, beginDate, endDate)
     })
 }
 

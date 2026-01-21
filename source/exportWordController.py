@@ -5,22 +5,22 @@ from datetime import datetime
 from source.stateManager import GetJudgesData
 
 @eel.expose
-def CreateWordFile(events):
+def CreateWordFile(events, beginDate, endDate):
+    # Получаем список судей
     judgesList = GetJudgesData()
 
-    print("ivent object: " + str(events[0]))
-    print("ID: " + str(events[0][0]))
+    dateDiapazomeBagin = datetime.fromtimestamp(beginDate / 1000)
+    dateDiapazomeEnd = datetime.fromtimestamp(endDate / 1000)
 
-    # ivent object: [19, '1736402400000', 'Наро-Фоминский городской суд', 
-    #                'Inbox', '10', '4', 'Участие подсудимой Паниной Л.Е.', 
-    #                '--- --- ---', '1752127334000']
+    # print("ivent object: " + str(events[0]))
+    # print("ID: " + str(events[0][0]))
 
     doc = Document()  
     # Добавить заголовок  
     heading = doc.add_heading('ГРАФИК ПРОВЕДЕНИЯ ВИДЕОКОНФЕРЕНЦ-СВЯЗИ В ХОЛМСКОМ ГОРОДСКОМ СУДЕ', 0)
     heading.style = doc.styles['Heading 1']
     # Добавить абзац  
-    doc.add_paragraph('''Выборка на диапазон дат: 00.00.0000 - 00.00.0000''')
+    doc.add_paragraph(f'''Выборка на диапазон дат: {dateDiapazomeBagin} - {dateDiapazomeEnd}''')
 
     table = doc.add_table(rows=1, cols=5)
     table.style = doc.styles['Table Grid']
@@ -50,8 +50,10 @@ def CreateWordFile(events):
 
     doc.add_page_break()
 
-    # Сохранить документ  
-    doc.save('my_document.docx')
+    docName = str(GenerateWordName()) # Генерируем имя файла
+    print(f'Выгрузка в Word файл ВКС событий, по диапазону дат - {docName}')
+    # Сохранить документ
+    doc.save(docName)
 
     return True
 
@@ -59,3 +61,13 @@ def FindJudgeFromList(list, id):
     for elem in list:
         if elem['Id'] == id:
             return elem['name']
+
+def GenerateWordName():
+    generateDate = datetime.now()
+    year = generateDate.year
+    month = generateDate.month
+    day = generateDate.day
+    hour = generateDate.hour
+    minute = generateDate.minute
+    second =generateDate.second
+    return f'{day}-{month}-{year}_{hour}-{minute}-{second}.docx'
