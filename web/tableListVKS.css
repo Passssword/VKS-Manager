@@ -13,6 +13,42 @@
     padding: 20px 20px;
     background: var(--color3);
   }
+#Print_InfoVKS { display: block; }
+.ivent_printCard {
+	/* margin: 20px 50px; */
+    /* background: var(--color2); */
+    /* border: 1px solid var(--color7); */
+    /* border-radius: 4px; */
+    /* box-sizing: border-box; */
+}
+.printCard_infoVKS_headerBlock {display: flex;}
+.printCard_infoVKS_headerBlock div:nth-child(1) { max-width: 100px;}
+.printCard_infoVKS_headerBlock div:nth-child(2) {
+	flex-grow: 1;
+	padding: 10px 50px;
+}
+.printCard_infoVKS_Caption {font-size: 22px; font-weight: 700;}
+.printCard_infoVKS_SubCaption {font-size: 16px;}
+.ivent_printCard table {
+	margin: 50px auto;
+	/* background: var(--color7); */
+}
+.ivent_printCard table th {
+	min-width: 250px;
+	padding: 5px 15px;
+	text-align: right;
+}
+.ivent_printCard table td {
+	width: 100%;
+	padding: 5px 15px;
+	text-align: left;
+}
+.printCard_infoVKS_footerBlock {
+	padding: 10px 15px;
+	font-size: 12px;
+	color: var(--color7);
+}
+
 .VKSTable_content_wrapper { margin: 10px 20px auto 20px;}
 
 .VKSTable_table {

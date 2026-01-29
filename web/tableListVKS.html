@@ -95,6 +95,53 @@
               <button id="VKSTable_btnCreateVKS" class="VKSList_menu_btn">+ Создать новое событие ВКС</button>
             </div>
 
+            <div id ="Print_InfoVKS" class="ivent_printCard">
+              <div class="printCard_infoVKS_headerBlock">
+                <div><img class="gerb_image" src="image/gerb.png"></div>
+                <div>
+                  <p class="printCard_infoVKS_Caption">Информация о событии ВКС</p>
+                  <br />
+                  <p class="printCard_infoVKS_SubCaption">Учетный объект: Холмский городской суд</p>
+                </div>
+              </div>
+
+              <hr />
+              
+              <table id="Print_InfoVKS_tableID">
+                <tr>
+                  <th><h4>Инициатор события:</h4></th>
+                  <td id="Print_InfoVKS_Table_initiator"></td>
+                </tr>
+                <tr>
+                  <th><h4>Объект ВКС:</h4></th>
+                  <td id="Print_InfoVKS_Table_object"></td>
+                </tr>
+                <tr>
+                  <th><h4>Дата события::</h4></th>
+                  <td id="Print_InfoVKS_Table_dateIvent"></td>
+                </tr>
+                <tr>
+                  <th><h4>Судья:</h4></th>
+                  <td id="Print_InfoVKS_Table_judge"></td>
+                </tr>
+                <tr>
+                  <th><h4>Зал:</h4></th>
+                  <td id="Print_InfoVKS_Table_hall">-</td>
+                </tr>
+                <tr>
+                  <th><h4>Коментарий:</h4></th>
+                  <td id="Print_InfoVKS_Table_comment"></td>
+                </tr>
+              </table>
+
+              <hr />
+              <div class="printCard_infoVKS_footerBlock">
+                Сотрудник создавший событие: <span id="Print_InfoVKS_workName"></span>
+                <br />Дата регистрации: <span id="Print_InfoVKS_dateCreateIvent"></span>
+                <br />Дата печати карточки: <span id="Print_InfoVKS_datePrint"></span>
+              </div>
+            </div>
+
             <div id="VKSTable_wrapper" class="VKSTable_content_wrapper">
               <!-- Место для рендера списка событий -->
               <table id="VKSTable_id" class="VKSTable_table" cellspacing='0'>
