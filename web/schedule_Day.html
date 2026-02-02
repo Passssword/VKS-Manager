@@ -45,20 +45,18 @@
 
     
     <div class="wrapper">
-      <div class="Page_header"><h2>Расписание на день</h2></div>
-      <div class="Page_filters">
-        Page_filters
-      </div>
+      <div id="pageHeader" class="Page_header"><h2>Расписание на день</h2></div>
 
-      <div class="sort_settings_block">
+      <div id="sortSettingsBlock" class="sort_settings_block">
         <h4>Сформировать график на дату:</h4>
         от <input id="reportDate" class="reportDate_input" type="date">
         <button id="btn_createTimetable" class="btn">>> Сформировать график</button>
+        <button id="btn_printTimetable" class="btn print">Печать</button>
       </div>
 
       <div id="schedule_Day_content" class="Page_content">
         <h3>Расписание ВКС на <span id="schedule_Day_date">--.--.----</span></h3>
-        <br /><br />
+        <br />
         <table id="schedule_Day_table" class="schedule_Day_table">
           
         </table>

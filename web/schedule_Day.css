@@ -20,6 +20,7 @@
 }
 
 .schedule_Day_table {
+    margin: 0 5px;
     border-collapse: collapse;
 }
 .schedule_Day_table th {

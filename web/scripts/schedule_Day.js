@@ -1,8 +1,14 @@
+const Sidebar_Block = document.querySelector('.sidebar')
+const pageHeader = document.getElementById('pageHeader');
+const sortSettingsBlock = document.getElementById('sortSettingsBlock');
 const reportDate = document.getElementById('reportDate');
 const btn_createTimetable = document.getElementById('btn_createTimetable');
 const schedule_Day_content_block = document.getElementById('schedule_Day_content');
 const schedule_Day_table = document.getElementById('schedule_Day_table');
 const schedule_Day_date = document.getElementById('schedule_Day_date');
+const btn_printTimetable = document.getElementById('btn_printTimetable');
+
+
 
 btn_createTimetable.onclick = function () {
     // Получаем даты на начало дня и конец дня
@@ -16,6 +22,16 @@ btn_createTimetable.onclick = function () {
 
     // Заполнение поля даты отчета
     schedule_Day_date.innerHTML = getDateFromMS(Date.parse(reportDate.value))
+}
+
+btn_printTimetable.onclick = function () {
+    pageHeader.style.display = 'none'
+    sortSettingsBlock.style.display = 'none'
+    Sidebar_Block.style.display = 'none'
+    window.print();
+    pageHeader.style.display = 'block'
+    sortSettingsBlock.style.display = 'block'
+    Sidebar_Block.style.display = 'block'
 }
 
 const renderTable = (data, judges) => {
