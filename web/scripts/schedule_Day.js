@@ -1,19 +1,21 @@
 const Sidebar_Block = document.querySelector('.sidebar')
 const pageHeader = document.getElementById('pageHeader');
 const sortSettingsBlock = document.getElementById('sortSettingsBlock');
-const reportDate = document.getElementById('reportDate');
+const input_report_beginDate = document.getElementById('input_report_beginDate');
+const input_report_endDate = document.getElementById('input_report_endDate');
 const btn_createTimetable = document.getElementById('btn_createTimetable');
 const schedule_Day_content_block = document.getElementById('schedule_Day_content');
 const schedule_Day_table = document.getElementById('schedule_Day_table');
-const schedule_Day_date = document.getElementById('schedule_Day_date');
+const schedule_Day_dateBegin = document.getElementById('schedule_Day_dateBegin');
+const schedule_Day_dateEnd = document.getElementById('schedule_Day_dateEnd');
 const btn_printTimetable = document.getElementById('btn_printTimetable');
 
 
 
 btn_createTimetable.onclick = function () {
     // Получаем даты на начало дня и конец дня
-    const beginDate = new Date(reportDate.value).setHours(0)
-    const endDate = new Date(reportDate.value).setHours(23,59,59)
+    const beginDate = new Date(input_report_beginDate.value).setHours(0)
+    const endDate = new Date(input_report_endDate.value).setHours(23,59,59)
 
     eel.GetJudgesData()().then(async judgesData => {
         let Events = await eel.GetAllFromDiapazonDate(beginDate, endDate)()
@@ -21,7 +23,8 @@ btn_createTimetable.onclick = function () {
     })
 
     // Заполнение поля даты отчета
-    schedule_Day_date.innerHTML = getDateFromMS(Date.parse(reportDate.value))
+    schedule_Day_dateBegin.innerHTML = getDateFromMS(Date.parse(input_report_beginDate.value))
+    schedule_Day_dateEnd.innerHTML = getDateFromMS(Date.parse(input_report_endDate.value))
 }
 
 btn_printTimetable.onclick = function () {
