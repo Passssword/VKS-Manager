@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <link rel="shortcut icon" href="image/app.ico" />  <!-- Устанавливаем иконку страницы -->
+
+    <!-- Подключаем внешние таблицы стилей -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="sidebar.css">
+    <link rel="stylesheet" type="text/css" href="schedule_Day.css">
+    <title>VKS manager</title>
+  </head>
+  <body id="app">
+    
+    <div class="sidebar">
+      <div>
+
+        <img class="gerb_image" src="image/gerb.png"> <br />
+
+        <div class="profile_info">
+          Вы вошли как: <br />
+          <span id="sidebar_nickname"></span>
+        </div>
+
+        <div class="menu_wrapper">
+                
+          <span id="sidebar_menu"></span>
+          <span id="sidebar_adminka"></span>
+          
+        </div>
+
+      </div>
+      <div>
+        <a href="app_info.html" class="menu_button">О Приложении</a>
+      </div>
+    </div>
+
+    
+    <div class="wrapper">
+      <div class="Page_header"><h2>Расписание на день</h2></div>
+      <div class="Page_filters">
+        Page_filters
+      </div>
+
+      <div class="sort_settings_block">
+        <h4>Сформировать график на дату:</h4>
+        от <input id="reportDate" class="reportDate_input" type="date">
+        <button id="btn_createTimetable" class="btn">>> Сформировать график</button>
+      </div>
+
+      <div id="schedule_Day_content" class="Page_content">
+        <h3>Расписание ВКС на <span id="schedule_Day_date">--.--.----</span></h3>
+        <br /><br />
+        <table id="schedule_Day_table" class="schedule_Day_table">
+          
+        </table>
+      </div>
+    </div>
+    
+
+  </body>
+  <script type="text/javascript" src="/eel.js"></script>
+  <script src="./scripts/sidebar.js"></script>
+  <script src="./scripts/schedule_Day.js"></script>
+</html>

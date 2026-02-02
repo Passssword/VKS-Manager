@@ -4,6 +4,7 @@ const VKSList_header_Block = mpb1 = document.querySelector('.VKSList_header')
 const VKSList_filters_Block = mpb1 = document.querySelector('.VKSList_filters')
 const VKSTable_id = document.getElementById('VKSTable_id');
 const VKSTable_btnCreateVKS = document.getElementById('VKSTable_btnCreateVKS');
+const VKSTable_scheduleDay = document.getElementById('VKSTable_scheduleDay');
 const Print_InfoVKS_block = document.getElementById('Print_InfoVKS');
 
 const Print_InfoVKS_table = document.getElementById('Print_InfoVKS_tableID');
@@ -69,8 +70,7 @@ const mapIvents = (ivents, judgesData) => {
                     <button class="btn edit">Редактировать</button>
                     <button class="btn delete">Удалить</button>
                   </td>
-            </tr>
-        `)
+            </tr>`)
     })
 }
 
@@ -176,7 +176,7 @@ eel.GetJudgesData()().then(async judgesData => {
 })
 
 VKSTable_btnCreateVKS.onclick = function () {window.location.replace("create-VKS.html");}
-
+VKSTable_scheduleDay.onclick = function () {window.location.replace("schedule_Day.html");}
 
 // eel.GetAllIvents()().then( ivents => {
 //     console.log(ivents)

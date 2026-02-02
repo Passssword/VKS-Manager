@@ -1,0 +1,32 @@
+.wrapper {
+    flex-grow: 1;
+}
+.Page_header {
+    padding: 20px 20px;
+    background: var(--color5);
+    color: var(--color3);
+  }
+.Page_filters {
+    padding: 20px 20px;
+    background: var(--color3);
+}
+.sort_settings_block {
+    margin: 20px 50px;
+    padding: 17px 20px;
+    background: var(--color3);
+    border: 1px solid var(--color7);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.schedule_Day_table {
+    border-collapse: collapse;
+}
+.schedule_Day_table th {
+    padding: 2px 5px;
+    border: 1px solid var(--color7);
+}
+.schedule_Day_table td {
+    padding: 2px 5px;
+    border: 1px solid var(--color7);
+}
