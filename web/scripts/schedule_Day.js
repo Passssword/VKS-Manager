@@ -48,9 +48,9 @@ const renderTable = (data, judges) => {
             <th>Комментарий</th>
         </tr>`
     
-    let createHTML_Table_Content = createHtmlTableContent(data, judges)
-    
-    
+    let createArray_Table_Content = createHtmlTableContent(data, judges)
+    let createHTML_Table_Content = getHtmlFromArray(createArray_Table_Content)
+
     schedule_Day_table.innerHTML = schedule_Day_Table_Headers + createHTML_Table_Content
 }
 
@@ -60,16 +60,23 @@ const createHtmlTableContent = (dataContent, judgesDataObject) => {
     return dataContent.map(dataObject => {
         stringCounter++
         let judgeObj = judgesDataObject.find( judgesData => judgesData.Id == dataObject[4])
-        return `
-            <tr>
-                <td>${stringCounter}.</td>
-                <td>${getDatetimeFromMS(dataObject[1])}</td>
-                <td>${dataObject[2]}</td>
-                <td>${judgeObj.name}</td>
-                <td>${dataObject[5]}</td>
-                <td>${dataObject[6]}</td>
-            </tr>`
+        return `<tr>
+                    <td>${stringCounter}.</td>
+                    <td>${getDatetimeFromMS(dataObject[1])}</td>
+                    <td>${dataObject[2]}</td>
+                    <td>${judgeObj.name}</td>
+                    <td>${dataObject[5]}</td>
+                    <td>${dataObject[6]}</td>
+                </tr>`
     })
+}
+
+const getHtmlFromArray = (arrayContent) => {
+    let stringValue = ""
+    arrayContent.forEach(element => {
+        stringValue += element
+    });
+    return stringValue
 }
 
 const getDateFromMS = (date_ms) => {
