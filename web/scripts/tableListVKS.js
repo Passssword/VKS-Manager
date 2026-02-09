@@ -32,8 +32,10 @@ const getDateFromMS = async (date_ms) => {
 }
 
 const mapIvents = (ivents, judgesData) => {
+    let stringCounter = 0
 
     return ivents.map(ivent => {
+        stringCounter++
         let date = null;
         let dateIvent = null;
         let dateCreateIvent = null;
@@ -57,7 +59,7 @@ const mapIvents = (ivents, judgesData) => {
         let judgeObj = judgesData.find( judgesData => judgesData.Id == ivent[4])
         return (`
             <tr class="VKSTable_tr_iventWrapper">
-                  <td>${ivent[0]}</td>
+                  <td>${stringCounter}.</td>
                   <td><a href="#">${ivent[2]}</a></td>
                   <td><a href="#">${dateIvent}</a></td>
                   <td><a href="#">${ivent[3] == 'Inbox' ? 'Входящий ВКС' : 'Исходящий ВКС'}</a></td>
@@ -150,7 +152,7 @@ const AddEventsButtons = (ivenstArr) => {
 }
 
 let usersTableCaptions = `<tr>
-                            <th>ID</th>
+                            <th>№</th>
                             <th>Объект ВКС</th>
                             <th>Дата / Время</th>
                             <th>Вх. / Исх.</th>
