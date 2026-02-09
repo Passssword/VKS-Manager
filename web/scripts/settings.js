@@ -4,6 +4,8 @@ const btn_deleteAllForDate = document.getElementById('btn_deleteAllForDate');
 
 const input_export_beginDate = document.getElementById('input_export_beginDate');
 const input_export_endDate = document.getElementById('input_export_endDate');
+const btn_getDirrectory = document.getElementById('btn_getDirrectory');
+const path_display = document.getElementById('path_display');
 const btn_exportWord = document.getElementById('btn_exportWord');
 
 const SettingsField = document.getElementById('settings_field');
@@ -31,7 +33,17 @@ btn_deleteAllForDate.onclick = function () {
     
 }
 
-btn_exportWord.onclick = function () {
+btn_getDirrectory.onclick = async function () {
+    // метод showDirectoryPicker() поддерживается не во всех браузерах
+    // const dirHandle = await window.showDirectoryPicker();
+    // console.log(dirHandle)
+
+    eel.GetDirrectoryPath()().then( path => {
+        eel.Set_ExportWordPath(path)().then( response => { path_display.innerHTML = response })
+    })
+}
+
+btn_exportWord.onclick = async function () {
     // Получаем даты на начало дня и конец дня
     const beginDate = new Date(input_export_beginDate.value).setHours(0)
     const endDate = new Date(input_export_endDate.value).setHours(23,59,59)
@@ -39,9 +51,12 @@ btn_exportWord.onclick = function () {
     console.log("Дата на начало дня: "+beginDate)
     console.log("Дата на конец дня: "+endDate)
 
+    const exportWordPath = await eel.Get_ExportWordPath()()
     eel.GetAllFromDiapazonDate(beginDate, endDate)().then( events => {
         console.log(events)
-        eel.CreateWordFile(events, beginDate, endDate)
+        console.log(exportWordPath)
+        if ( exportWordPath == "" ) {alert("Не выбран путь сохранения файла")}
+        else {eel.CreateWordFile(events, beginDate, endDate, exportWordPath)}
     })
 }
 
@@ -96,6 +111,9 @@ let judgesTableCaptions = `<tr>
                         </tr>`
 
 document.addEventListener('DOMContentLoaded', async function() {
+
+    // Заполняем поле пути выгрузки Word файла, при открытие страници так как в state путь может уже существовать.
+    path_display.innerHTML = await eel.Get_ExportWordPath()()
 
     let configData = await eel.ReadConfig()()
     let judgesData = await eel.GetAllJudges()()

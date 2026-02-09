@@ -32,7 +32,10 @@ initialState = {
             "iventRegistrationDate": ""
         }
     },
-    "JudgeData": []
+    "JudgeData": [],
+    "SettingsPageData": {
+        "ExportWordPath": ""
+    }
 }
 
 @eel.expose
@@ -102,3 +105,12 @@ def SetJudgesData(judgesData):
 @eel.expose
 def GetJudgesData():
     return initialState['JudgeData']
+
+@eel.expose
+def Set_ExportWordPath(path):
+    initialState['SettingsPageData']['ExportWordPath'] = path
+    return initialState['SettingsPageData']['ExportWordPath']
+
+@eel.expose
+def Get_ExportWordPath():
+    return initialState['SettingsPageData']['ExportWordPath']

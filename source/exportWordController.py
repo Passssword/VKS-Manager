@@ -1,11 +1,23 @@
 import eel
+import wx
 from docx import Document
 from docx.enum.style import WD_STYLE_TYPE
 from datetime import datetime
 from source.stateManager import GetJudgesData
 
 @eel.expose
-def CreateWordFile(events, beginDate, endDate):
+def GetDirrectoryPath():
+    app = wx.App()
+    dlg = wx.DirDialog(None, "Выбор директории...", "",
+         wx.DD_DEFAULT_STYLE | wx.DD_DIR_MUST_EXIST)
+ 
+    res = dlg.ShowModal()
+    if res == wx.ID_OK:
+        print("Выбран каталог: "+dlg.GetPath())
+        return dlg.GetPath()
+
+@eel.expose
+def CreateWordFile(events, beginDate, endDate, exportWordPath):
     # Получаем список судей
     judgesList = GetJudgesData()
 
@@ -53,7 +65,7 @@ def CreateWordFile(events, beginDate, endDate):
     docName = str(GenerateWordName()) # Генерируем имя файла
     print(f'Выгрузка в Word файл ВКС событий, по диапазону дат - {docName}')
     # Сохранить документ
-    doc.save(docName)
+    doc.save(f'{exportWordPath}\{docName}')
 
     return True
 
