@@ -85,7 +85,7 @@ const arrToString = (array) => {
     return stringValue
 }
 
-const AddEventsButtons = (ivenstArr) => {
+const AddEventsButtons = (ivenstArr, halls) => {
     const buttonEdit = document.querySelectorAll('.edit')
     const buttonDelete = document.querySelectorAll('.delete')
     const buttonPrint = document.querySelectorAll('.print')
@@ -123,15 +123,17 @@ const AddEventsButtons = (ivenstArr) => {
         element.addEventListener('click', async (elem) => {
             
             let dateNow = new Date()
+            let hallObject = null;
+
 
             if(ivent[3] == 'Inbox') {Print_InfoVKS_Table_initiator.innerHTML = ivent[2]}
             else {Print_InfoVKS_Table_initiator.innerHTML = 'Холмский городской суд'}
             Print_InfoVKS_Table_object.innerHTML = ivent[2]
             Print_InfoVKS_Table_dateIvent.innerHTML = await getDateFromMS(ivent[1])
             Print_InfoVKS_Table_judge.innerHTML = judgesDataObject.find( judgesData => judgesData.Id == ivent[4]).name
-            Print_InfoVKS_Table_hall.innerHTML = ivent[5]
+            if ( ivent[5] == 2 ) {Print_InfoVKS_Table_hall.innerHTML = `${halls[0].HallName} - ${halls[0].IpAdress}`}
+            if ( ivent[5] == 4 ) {Print_InfoVKS_Table_hall.innerHTML = `${halls[1].HallName} - ${halls[1].IpAdress}`}
             Print_InfoVKS_Table_comment.innerHTML = ivent[6]
-
             Print_InfoVKS_workName.innerHTML = ivent[7]
             Print_InfoVKS_dateCreateIvent.innerHTML = await getDateFromMS(ivent[8])
             Print_InfoVKS_datePrint.innerHTML = await getDateFromMS(Date.parse(dateNow))
@@ -166,13 +168,14 @@ let usersTableCaptions = `<tr>
 eel.GetJudgesData()().then(async judgesData => {
     console.log(judgesData)
     let Ivents = await eel.GetAllIvents()()
+    let configData = await eel.ReadConfig()()
     console.log(Ivents)
 
     let iventsMap = mapIvents(Ivents, judgesData)
     let iventsHTML = arrToString(iventsMap)
 
     VKSTable_id.innerHTML = usersTableCaptions + iventsHTML
-    AddEventsButtons(Ivents)
+    AddEventsButtons(Ivents, configData.Halls)
 
     judgesDataObject = judgesData;
 })
