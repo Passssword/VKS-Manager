@@ -55,7 +55,7 @@ btn_exportWord.onclick = async function () {
     eel.GetAllFromDiapazonDate(beginDate, endDate)().then( events => {
         console.log(events)
         console.log(exportWordPath)
-        if ( exportWordPath == "" ) {alert("Не выбран путь сохранения файла")}
+        if ( exportWordPath == null || exportWordPath == "" ) {alert("Не выбран путь сохранения файла")}
         else {eel.CreateWordFile(events, beginDate, endDate, exportWordPath)}
     })
 }

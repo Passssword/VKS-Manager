@@ -14,6 +14,7 @@
 
         <!-- Подключаем внешние таблицы стилей -->
         <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="buttons_style.css">
         <link rel="stylesheet" type="text/css" href="sidebar.css">
         <link rel="stylesheet" type="text/css" href="tableListVKS.css">
         <title>VKS manager</title>
@@ -91,9 +92,17 @@
             <div class="VKSList_header">
               <h2>События ВКС (в таблице):</h2>
             </div>
-            <div class="VKSList_filters">
-              <button id="VKSTable_btnCreateVKS" class="VKSList_menu_btn">+ Создать новое событие ВКС</button>
-              <button id="VKSTable_scheduleDay" class="VKSList_menu_btn">>>> Сформировать график на день</button>
+            <div class="VKSList_subheader">
+              <div class="VKSList_subheader_block1">
+                <!-- <button id="VKSTable_btnCreateVKS" class="VKSList_menu_btn">+ Создать новое событие ВКС</button>
+                <button id="VKSTable_scheduleDay" class="VKSList_menu_btn">>>> Сформировать график на день</button> -->
+                <a href="#" id="VKSTable_btnCreateVKS" class="button btn_create">Создать новое событие ВКС</a>
+                <a href="#" id="VKSTable_scheduleDay" class="button btn_schedule">Сформировать график на диапазон дат</a>
+              </div>
+              <div class="VKSList_subheader_block2">
+                <a href="#" class="button btn_update">Обновить таблицу</a>
+              </div>
+              
             </div>
 
             <div id ="Print_InfoVKS" class="ivent_printCard">

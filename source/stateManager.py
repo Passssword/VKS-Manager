@@ -33,6 +33,7 @@ initialState = {
         }
     },
     "JudgeData": [],
+    "reportsPageData": "",
     "SettingsPageData": {
         "ExportWordPath": ""
     }

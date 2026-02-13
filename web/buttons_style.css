@@ -1,0 +1,68 @@
+.button {
+    display: inline-block;
+    text-decoration: none;
+    border: 0;
+    border-radius: 5px;
+    padding: 5px 10px 5px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  /*----------------------------------*/
+  .btn_create {
+    background: no-repeat left/30px url('image/button_create.png'), linear-gradient(#A1D8B5, #4CB572 50%);
+    color: #fff;
+    background-position: 5px;
+    border: 1px solid;
+    border-color: #5bca89 #18944c #2e9256 #5bca89;
+  }
+  .btn_create:hover {
+    background: no-repeat left/35px url('image/button_create.png'), linear-gradient(#a2f8c6, #4CB572 50%);
+    background-position: 5px;
+    color: #CCDCDB;
+  }
+  .btn_create:active {
+    background: no-repeat left/25px url('image/button_create.png'), linear-gradient(#135E4B, #8effbd);
+    background-position: 5px;
+  }
+/*----------------------------------*/
+  .btn_schedule {
+    background: no-repeat left/30px url('image/schedule.png'), linear-gradient(#d6bfb1, #997F53 50%);
+    color: #fff;
+    background-position: 5px;
+    border: 1px solid;
+    border-color: #C9C3BD #6e6155 #6e6155 #C9C3BD;
+  }
+  .btn_schedule:hover {
+    background: no-repeat left/35px url('image/schedule.png'), linear-gradient(#ffe7d9, #997F53 50%);
+    color: #CCDCDB;
+    background-position: 5px;
+    border: 1px solid;
+    border-color: #C9C3BD #6e6155 #6e6155 #C9C3BD;
+  }
+  .btn_schedule:active {
+    background: no-repeat left/25px url('image/schedule.png'), linear-gradient(#997F53, #d1bbae 50%);
+    color: #fff;
+    background-position: 5px;
+    border: 1px solid;
+    border-color: #C9C3BD #6e6155 #6e6155 #C9C3BD;
+  }
+/*----------------------------------*/
+  .btn_update {
+    background: no-repeat left/30px url('image/button_update_2.png'), linear-gradient(#f7dda9, #CFB177 50%);
+    color: #fff;
+    background-position: 5px;
+    border: 1px solid;
+    border-color: #C9C3BD #6e6155 #6e6155 #C9C3BD;
+  }
+  .btn_update:hover {
+    background: no-repeat left/35px url('image/button_update_2.png'), linear-gradient(#e9cc91, #CFB177 50%);
+    color: #126842;
+    background-position: 5px;
+  }
+  .btn_update:active {
+    background: no-repeat left/25px url('image/button_update_2.png'), linear-gradient(#b19866, #ffedc8 50%);
+    color: #126842;
+    background-position: 5px;
+  }

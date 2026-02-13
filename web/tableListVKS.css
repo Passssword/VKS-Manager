@@ -9,10 +9,14 @@
     background: var(--color5);
     color: var(--color3);
   }
-.VKSList_filters {
+.VKSList_subheader {
+	display: flex;
     padding: 20px 20px;
     background: var(--color3);
   }
+.VKSList_subheader_block1 {flex-grow: 1;}
+.VKSList_subheader_block2 {}
+
 #Print_InfoVKS { display: none; }
 .ivent_printCard {
 	/* margin: 20px 50px; */
