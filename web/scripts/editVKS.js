@@ -39,7 +39,6 @@ eel.GetIventEdiPageData()().then( iventDataResponse => {
     }
     input_Date.value = Date
     input_Object.value = iventDataResponse.iventObject
-    input_Hall.value = iventDataResponse.iventHall
     input_Description.value = iventDataResponse.iventDescription
     EditVKS_createWorker.innerHTML = iventDataResponse.iventWorker
     EditVKS_createDate.innerHTML = reqDate
@@ -47,16 +46,21 @@ eel.GetIventEdiPageData()().then( iventDataResponse => {
 
 btn_EditVKS.onclick = function () {
     const eventDate = new Date(input_Date.value)
+
+    let hallValue = null
+    if(HallsSelectList.value == 1) hallValue = 2
+    else if (HallsSelectList.value == 2) hallValue = 4
+
     const eventObject = {
         iventDate: Date.parse(eventDate),
         iventObject: input_Object.value,
         iventType: input_Type.value,
         iventJudge: JudgeSelectList.value,
-        iventHall: input_Hall.value,
+        iventHall: hallValue,
         iventDescription: input_Description.value,
         id: EditVKS_id_container.innerHTML
     }
-
+    console.log(eventObject.iventHall)
     eel.UpdateIvent(eventObject)().then( response => {
         if ( response == true ) {window.location.replace("tableListVKS.html");}
         else {console.log('response Error')}
