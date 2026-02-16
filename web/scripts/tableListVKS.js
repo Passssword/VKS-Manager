@@ -5,6 +5,7 @@ const VKSList_filters_Block = mpb1 = document.querySelector('.VKSList_subheader'
 const VKSTable_id = document.getElementById('VKSTable_id');
 const VKSTable_btnCreateVKS = document.getElementById('VKSTable_btnCreateVKS');
 const VKSTable_scheduleDay = document.getElementById('VKSTable_scheduleDay');
+const VKSTable_updateTableButtonID = document.getElementById('VKSTable_updateTableButtonID');
 const Print_InfoVKS_block = document.getElementById('Print_InfoVKS');
 
 const Print_InfoVKS_table = document.getElementById('Print_InfoVKS_tableID');
@@ -182,6 +183,17 @@ eel.GetJudgesData()().then(async judgesData => {
 
 VKSTable_btnCreateVKS.onclick = function () {window.location.replace("create-VKS.html");}
 VKSTable_scheduleDay.onclick = function () {window.location.replace("schedule_Day.html");}
+
+VKSTable_updateTableButtonID.onclick = async function () {
+    let Ivents = await eel.GetAllIvents()()
+    let configData = await eel.ReadConfig()()
+
+    let iventsMap = mapIvents(Ivents, judgesDataObject)
+    let iventsHTML = arrToString(iventsMap)
+
+    VKSTable_id.innerHTML = usersTableCaptions + iventsHTML
+    AddEventsButtons(Ivents, configData.Halls)
+}
 
 // eel.GetAllIvents()().then( ivents => {
 //     console.log(ivents)
