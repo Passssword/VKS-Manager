@@ -1,7 +1,7 @@
 
 const Sidebar_Block = mpb1 = document.querySelector('.sidebar')
 const VKSList_header_Block = mpb1 = document.querySelector('.VKSList_header')
-const VKSList_filters_Block = mpb1 = document.querySelector('.VKSList_filters')
+const VKSList_filters_Block = mpb1 = document.querySelector('.VKSList_subheader')
 const VKSTable_id = document.getElementById('VKSTable_id');
 const VKSTable_btnCreateVKS = document.getElementById('VKSTable_btnCreateVKS');
 const VKSTable_scheduleDay = document.getElementById('VKSTable_scheduleDay');
