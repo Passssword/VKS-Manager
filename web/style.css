@@ -172,26 +172,22 @@ background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
 	background: rgba(0,0,0,0.15);
 }
 .create {
-	background: #059c49;
+	background: linear-gradient(#81ca9c, #41b36b 50%, #1e8543);
 	color: #fff;
-	/* background: no-repeat left/27% url('image/delete.png'), #e74c3c; */
+  border: 1px solid;
+  border-color: #abdbbf #18944c #2e794c #92dab0;
 }
-.create:hover {
-	background: #86d47b;
-	/* background: no-repeat left/30% url('image/delete.png'), #c0392b; */
-}
+.create:hover {background: linear-gradient(#1e8543, #41b36b, #81ca9c 50% );}
+
 .delete {
-	background: #e74c3c;
+	background: linear-gradient(#e6857b, #e74c3c 50%, #b3392c);
 	color: #fff;
-	/* background: no-repeat left/27% url('image/delete.png'), #e74c3c; */
+  border: 1px solid;
+  border-color: #e6857b #b3392c #912f24 #e6857b;
 }
-.delete:hover {
-	background: #c0392b;
-	/* background: no-repeat left/30% url('image/delete.png'), #c0392b; */
-}
+.delete:hover {background: linear-gradient(#b3392c, #bd3020, #e6857b 70%)}
 .delete:active {
 	background: #c0392b;
-	/* background: no-repeat left/30% url('image/delete.png'), #c0392b; */
 	top: 2px;
 }
 .delete:focus {
@@ -200,31 +196,29 @@ background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
 }
 
 .edit {
-	background: #dab246;
+	background: linear-gradient(#f1cf6f, #f3c33f 50%, #a38531);
 	color: #fff;
-	/* background: no-repeat left/27% url('image/edit-icon-1.png'), var(--color7); */
+  border: 1px solid;
+  border-color: #f7d579 #a38531 #796326 #f3c33f;
 }
 .edit:hover {
-	background: #ffd971;
-	/* background: no-repeat left/30% url('image/edit-icon-1.png'), #86a7a7; */
+	background: linear-gradient(#a38531, #f3c33f, #f1cf6f 70%);
 }
 .edit:active {
 	background: #bbbbbb;;
-	/* background: no-repeat left/30% url('image/edit-icon-1.png'), #a4d6d6; */
 	top: 2px;
 }
 
 .print {
-	background: var(--color5);
+	background: linear-gradient(#9cc3e0, #497191 50%, var(--color5));
 	color: #fff;
-	/* background: no-repeat left/27% url('image/print-icon-1.png'), var(--color5); */
+  border: 1px solid;
+  border-color: #93c2e9 #497191 #324d63 #8ca1b3;
 }
 .print:hover {
-	background: #86a7a7;
-	/* background: no-repeat left/30% url('image/print-icon-1.png'), #86a7a7; */
+	background: linear-gradient(var(--color5), #497191, #9cc3e0 70%);
 }
 .print:active {
 	background: #a4d6d6;
-	/* background: no-repeat left/30% url('image/print-icon-1.png'), #a4d6d6; */
 	top: 2px;
 }
