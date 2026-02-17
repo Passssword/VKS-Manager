@@ -8,6 +8,8 @@ const Hall2_Count = document.getElementById('reportDate_Hall2_count');
 const Hall4_Count = document.getElementById('reportDate_Hall4_count');
 const judgeTable = document.getElementById('judgeTableID');
 
+let judgesData = null;
+
 function CalculateStatistics (eventsArray) {
     const results = {
         totalEvents: eventsArray.length,
@@ -25,20 +27,24 @@ function CalculateStatistics (eventsArray) {
     return results
 }
 
+async function CalculateJudgeStatistics (judgesArr, eventsArr) {
+    // Считаем количество ВКС по судьям
+    return judgesArr.map( judge => {
+        let newJudgeArr = [judge[0], judge [1], judge[2]]
+        newJudgeArr[3] = eventsArr.filter(event => event[4] == judge[0]).length
+        return newJudgeArr
+    })
+}
+
 btn_reportDate.onclick = function () {
     // Получаем даты на начало дня и конец дня
     const beginDate = new Date(reportDate_begin.value).setHours(0)
     const endDate = new Date(reportDate_end.value).setHours(23,59,59)
 
-    // const reportDateSettingsObject = {
-    //     reportDateBegin: beginDate,
-    //     reportDateEnd: endDate
-    // }
-
     console.log("Дата на начало дня: "+beginDate)
     console.log("Дата на конец дня: "+endDate)
 
-    eel.GetAllFromDiapazonDate(beginDate, endDate)().then( events => {
+    eel.GetAllFromDiapazonDate(beginDate, endDate)().then( async (events) => {
 
         const resultStatistics = CalculateStatistics(events)
         
@@ -47,5 +53,8 @@ btn_reportDate.onclick = function () {
         InputCount.innerHTML = resultStatistics.totalInputsCount
         Hall2_Count.innerHTML = resultStatistics.totalHall2Count
         Hall4_Count.innerHTML = resultStatistics.totalHall4Count
+
+        let resultJudgesStatistics = await CalculateJudgeStatistics(judgesData, events)
+        RenderJudgesTable(resultJudgesStatistics)
     })
 }

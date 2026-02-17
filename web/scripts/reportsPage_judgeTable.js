@@ -11,7 +11,7 @@ const mapJudges = (judges) => {
                 <td>${judge[0]}</td>
                 <td>${judge[1]}</td>
                 <td>${judgeStatusStr}</td>
-                <td>--</td>
+                <td>${judge[3]}</td>
             </tr>
         `)
     })
@@ -32,10 +32,21 @@ let judgesTableCaptions = `<tr>
                             <th>Кол-во ВКС</th>
                         </tr>`
 
-document.addEventListener('DOMContentLoaded', async function() {
-    let judgesData = await eel.GetAllJudges()()
-
-    let judgesMap = mapJudges(judgesData)
+function RenderJudgesTable (judgesArray) {
+    let judgesMap = mapJudges(judgesArray)
     let judgesHTML = arrToString(judgesMap)
     judgeTable.innerHTML = judgesTableCaptions + judgesHTML
+}
+document.addEventListener('DOMContentLoaded', async function() {
+    
+    let judges = await eel.GetAllJudges()()
+    
+    // judgesData объявлен в другом модуле.
+    // Сдесь подготавливаем объект судей для подъсчета кол-ва ВКС
+    judgesData = judges.map( judge => {
+        judge[3] = 0
+        return judge
+    })
+
+    RenderJudgesTable(judgesData)
 })
