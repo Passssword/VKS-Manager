@@ -108,7 +108,7 @@ def GetAllFromDiapazonDate(dateBegin, dateEnd):
         cursor.execute(sqlQuery)
         ivents = cursor.fetchall()
         connection.close()
-        return ivents
+        return sorted(ivents, key=lambda x: x[1])
     except Exception as Error:
         print(Error)
         return "Error"
