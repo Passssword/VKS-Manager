@@ -20,6 +20,10 @@ def GetDirrectoryPath():
 def CreateWordFile(events, beginDate, endDate, exportWordPath):
     # Получаем список судей
     judgesList = GetJudgesData()
+    
+    # Считаем статистику для выгружаемого списка
+    statisticsObject = CalculateStatistic(events)
+    print(statisticsObject)
 
     dateDiapazomeBagin = datetime.fromtimestamp(beginDate / 1000)
     dateDiapazomeEnd = datetime.fromtimestamp(endDate / 1000)
@@ -33,6 +37,18 @@ def CreateWordFile(events, beginDate, endDate, exportWordPath):
     heading.style = doc.styles['Heading 1']
     # Добавить абзац  
     doc.add_paragraph(f'''Выборка на диапазон дат: {dateDiapazomeBagin} - {dateDiapazomeEnd}''')
+    doc.add_paragraph("")
+    headingStatistic = doc.add_heading('Статистика для данной таблицы:', 0)
+    headingStatistic.style = doc.styles['Heading 2']
+    doc.add_paragraph(f'''Общее количество ВКС: {statisticsObject['totalEvents']}''')
+    doc.add_paragraph(f'''Исходящих ВКС: {statisticsObject['totalOutputsCount']}''')
+    doc.add_paragraph(f'''Входящих ВКС: {statisticsObject['totalInputsCount']}''')
+    doc.add_paragraph(f'''ВКС во 2 зале: {statisticsObject['totalHall2Count']}''')
+    doc.add_paragraph(f'''ВКС в 4 зале: {statisticsObject['totalHall4Count']}''')
+
+    doc.add_paragraph("")
+    headingStatistic = doc.add_heading('Таблица ВКС:', 0)
+    headingStatistic.style = doc.styles['Heading 2']
 
     table = doc.add_table(rows=1, cols=5)
     table.style = doc.styles['Table Grid']
@@ -83,3 +99,20 @@ def GenerateWordName():
     minute = generateDate.minute
     second =generateDate.second
     return f'{day}-{month}-{year}_{hour}-{minute}-{second}.docx'
+
+def CalculateStatistic(eventsArray):
+    statisticsObj = {
+        "totalEvents": len(eventsArray),
+        "totalOutputsCount": 0,
+        "totalInputsCount": 0,
+        "totalHall2Count": 0,
+        "totalHall4Count": 0
+    }
+    for elem in eventsArray:
+        print(elem[2])
+        if elem[3] == 'Outbox': statisticsObj['totalOutputsCount'] = statisticsObj['totalOutputsCount']+1
+        if elem[3] == 'Inbox': statisticsObj['totalInputsCount'] = statisticsObj['totalInputsCount']+1
+        if elem[5] == '2': statisticsObj['totalHall2Count'] = statisticsObj['totalHall2Count']+1
+        if elem[5] == '4': statisticsObj['totalHall4Count'] = statisticsObj['totalHall4Count']+1
+
+    return statisticsObj
