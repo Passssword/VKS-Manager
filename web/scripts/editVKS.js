@@ -1,4 +1,5 @@
 const EditVKS_id_container = document.getElementById('EditVKS_id_container');
+const EditVKS_reserve_checkbox = document.querySelector('#EditVKS_reserve_checkbox');
 const input_Date = document.getElementById('EditVKS_Date');
 const input_Object = document.getElementById('EditVKS_Object');
 const input_Type = document.getElementById('EditVKS_Type');
@@ -44,6 +45,10 @@ eel.GetIventEdiPageData()().then( iventDataResponse => {
     EditVKS_createDate.innerHTML = reqDate
 })
 
+EditVKS_reserve_checkbox.addEventListener('click', ()=>{
+    console.log(EditVKS_reserve_checkbox.checked)
+})
+
 btn_EditVKS.onclick = function () {
     const eventDate = new Date(input_Date.value)
 
@@ -52,6 +57,7 @@ btn_EditVKS.onclick = function () {
     else if (HallsSelectList.value == 2) hallValue = 4
 
     const eventObject = {
+        iventReserve: EditVKS_reserve_checkbox.checked,
         iventDate: Date.parse(eventDate),
         iventObject: input_Object.value,
         iventType: input_Type.value,

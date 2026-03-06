@@ -11,8 +11,6 @@ def GetAllIvents():
         ivents = cursor.fetchall()
         connection.close()
         
-        # sorted_ivenst = sorted(ivents, key=lambda x: x[1])
-        # print(sorted_ivenst)
         return sorted(ivents, key=lambda x: x[1])
 
     except Exception as Error:
@@ -21,6 +19,20 @@ def GetAllIvents():
 
 @eel.expose
 def CreateNewIvent(iventData):
+    createTableQuery = '''
+        CREATE TABLE IF NOT EXISTS ivents(
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          stateReserve TEXT,
+          iventDate TEXT NOT NULL,
+          iventObject TEXT,
+          iventType TEXT,
+          iventJudge TEXT,
+          iventHall TEXT,
+          iventDescription TEXT,
+          iventWorker TEXT,
+          iventRegistrationDate TEXT
+          )
+        '''
     sqlQuery = f'''INSERT INTO ivents(
         iventDate,
         iventObject,
@@ -30,11 +42,13 @@ def CreateNewIvent(iventData):
         iventDescription,
         iventWorker,
         iventRegistrationDate) 
-        VALUES( ?, ?, ?, ?, ?, ?, ?, ? )'''
+        VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ? )'''
     try:
         connection = sqlite3.connect('ivents.db')
         cursor = connection.cursor()
+        cursor.execute(createTableQuery)
         cursor.execute(sqlQuery, (
+            iventData['iventReserve'],
             iventData['iventDate'],
             iventData['iventObject'],
             iventData['iventType'],
