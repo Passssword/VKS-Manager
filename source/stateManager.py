@@ -29,7 +29,8 @@ initialState = {
             "iventHall": "",
             "iventDescription": "",
             "iventWorker": "",
-            "iventRegistrationDate": ""
+            "iventRegistrationDate": "",
+            "iventStateReserve": ""
         }
     },
     "JudgeData": [],
@@ -81,7 +82,8 @@ def SetIventEdiPageData(
     iventHall,
     iventDescription,
     iventWorker,
-    iventRegistrationDate):
+    iventRegistrationDate,
+    iventStateReserve):
     initialState['IventEditPageData']['IventData']['id'] = id
     initialState['IventEditPageData']['IventData']['iventDate'] = iventDate
     initialState['IventEditPageData']['IventData']['iventObject'] = iventObject
@@ -91,6 +93,7 @@ def SetIventEdiPageData(
     initialState['IventEditPageData']['IventData']['iventDescription'] = iventDescription
     initialState['IventEditPageData']['IventData']['iventWorker'] = iventWorker
     initialState['IventEditPageData']['IventData']['iventRegistrationDate'] = iventRegistrationDate
+    initialState['IventEditPageData']['IventData']['iventStateReserve'] = iventStateReserve
     return True
 
 @eel.expose

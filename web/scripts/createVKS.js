@@ -1,3 +1,4 @@
+const CreateVKS_reserve_checkbox = document.querySelector('#CreateVKS_reserve_checkbox');
 const input_Date = document.getElementById('CreateVKS_Date');
 const input_Object = document.getElementById('CreateVKS_Object');
 const input_Type = document.getElementById('CreateVKS_Type');
@@ -23,6 +24,7 @@ btn_Create.onclick = async function () {
     if (HallsList.value == 2) {hallValue = 4}
 
     let iventObject = {
+        iventReserve: CreateVKS_reserve_checkbox.checked,
         iventDate: Date.parse(dateIvent),
         iventObject: input_Object.value,
         iventType: input_Type.value,

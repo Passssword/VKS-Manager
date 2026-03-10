@@ -15,5 +15,4 @@ eel.start('loginPage.html',
           # mode='yandex'
     #   size=(700,400),
     #   geometry={'tableListVKS.html': {}},
-    
       )

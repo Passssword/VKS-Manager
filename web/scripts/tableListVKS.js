@@ -59,7 +59,7 @@ const mapIvents = (ivents, judgesData) => {
 
         let judgeObj = judgesData.find( judgesData => judgesData.Id == ivent[4])
         return (`
-            <tr class="VKSTable_tr_iventWrapper">
+            <tr class="VKSTable_tr_iventWrapper ${ivent[9]==1 ? 'tr_reserveStyle' : ''}">
                   <td>${stringCounter}.</td>
                   <td><a href="#">${ivent[2]}</a></td>
                   <td><a href="#">${dateIvent}</a></td>
@@ -96,7 +96,7 @@ const AddEventsButtons = (ivenstArr, halls) => {
         const ivent = ivenstArr[buttonEditIventCount]
         buttonEditIventCount++
         element.addEventListener('click', (elem) => {
-            eel.SetIventEdiPageData(ivent[0], ivent[1], ivent[2], ivent[3], ivent[4], ivent[5], ivent[6], ivent[7], ivent[8])().then( res => {
+            eel.SetIventEdiPageData(ivent[0], ivent[1], ivent[2], ivent[3], ivent[4], ivent[5], ivent[6], ivent[7], ivent[8], ivent[9])().then( res => {
                 if(res == true) {window.location.replace("edit-VKS-Page.html");}
                 else {console.log("Somethink wrong")}
             })

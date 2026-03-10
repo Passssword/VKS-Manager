@@ -170,3 +170,14 @@
 	color: #bd5a35;
 	text-decoration:underline;
 }
+
+.VKSTable_table .tr_reserveStyle td {
+	background: #ffb4b4;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ebc8c8), to(#e59696));
+	background: -moz-linear-gradient(top,  #ebc8c8,  #e59696);
+}
+.VKSTable_table .tr_reserveStyle:nth-child(even) td{
+	background: #ffb4b4;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ebc8c8), to(#e59696));
+	background: -moz-linear-gradient(top,  #ebc8c8,  #e59696);
+}

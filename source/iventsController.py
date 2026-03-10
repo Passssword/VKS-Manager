@@ -34,6 +34,7 @@ def CreateNewIvent(iventData):
           )
         '''
     sqlQuery = f'''INSERT INTO ivents(
+        stateReserve,
         iventDate,
         iventObject,
         iventType,
@@ -70,6 +71,7 @@ def CreateNewIvent(iventData):
 def UpdateIvent(iventData):
     sqlQuery = '''
         UPDATE ivents SET 
+        stateReserve = ?,
         iventDate = ?,
         iventObject = ?,
         iventType = ?,
@@ -82,6 +84,7 @@ def UpdateIvent(iventData):
         cursor = connection.cursor()
         cursor.execute(
             sqlQuery, (
+            iventData['iventReserve'],
             iventData['iventDate'],
             iventData['iventObject'],
             iventData['iventType'],

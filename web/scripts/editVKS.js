@@ -31,7 +31,11 @@ eel.GetIventEdiPageData()().then( iventDataResponse => {
     let reqDate = PrepareRegistrationDate(iventDataResponse.iventRegistrationDate)
 
     EditVKS_id_container.innerHTML = iventDataResponse.id
-    if(iventDataResponse.iventType == 'Inbox') {
+
+    if (iventDataResponse.iventStateReserve == 0) {EditVKS_reserve_checkbox.checked = false}
+    else {EditVKS_reserve_checkbox.checked = true}
+
+    if (iventDataResponse.iventType == 'Inbox') {
         Option_Inbox.selected = true
         Option_Outbox.selected = false
     } else {
