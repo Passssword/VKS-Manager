@@ -20,9 +20,9 @@ function PrepareRegistrationDate (registrationDate) {
 }
 function PrepareIventDate (dateIvent) {
     let iventDateTime = new Date( parseInt(dateIvent) ).toISOString()
-    let iventDate = iventDateTime.split('T')
+    let iventDate = new Date(iventDateTime).toLocaleDateString('en-CA')
     iventTime = new Date(iventDateTime).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
-    return `${iventDate[0]}T${iventTime}`
+    return `${iventDate}T${iventTime}`
 }
 
 eel.GetIventEdiPageData()().then( iventDataResponse => {
