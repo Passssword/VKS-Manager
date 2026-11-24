@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <link rel="shortcut icon" href="image/app.ico" />  <!-- Устанавливаем иконку страницы -->
+
+    <!-- Подключаем внешние таблицы стилей -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="sidebar.css">
+    <link rel="stylesheet" type="text/css" href="iss_base.css">
+    <link rel="stylesheet" type="text/css" href="buttons_style.css">
+    <title>VKS manager</title>
+  </head>
+  <body id="app">
+    
+    <div class="sidebar">
+      <div>
+
+        <img class="gerb_image" src="image/gerb.png"> <br />
+
+        <div class="profile_info">
+          Вы вошли как: <br />
+          <span id="sidebar_nickname"></span>
+        </div>
+
+        <div class="menu_wrapper">
+                
+          <span id="sidebar_menu"></span>
+          <span id="sidebar_adminka"></span>
+          
+        </div>
+
+      </div>
+      <div>
+        <a href="app_info.html" class="menu_button">О Приложении</a>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      
+        <div class="content_block">
+          <h4>Справочник IP-адресов комплектов ВКС:</h4>
+          <hr>
+          <!-- <span id="issbase_render_block"> -->
+            <!-- Место для рендера списка IP-адресов -->
+
+            <table id="iss_list_table">
+              
+            </table>
+          <!-- </span> -->
+        </div>
+
+    </div>
+    
+
+  </body>
+  <script type="text/javascript" src="/eel.js"></script>
+  <script src="./scripts/sidebar.js"></script>
+  <script src="./scripts/iss_base.js"></script>
+</html>
